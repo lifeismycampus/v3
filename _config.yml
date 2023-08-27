@@ -77,7 +77,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: "/assets/img/favicons/avatar.png"
 
 # boolean type, the global switch for TOC in posts.
 toc: true
@@ -113,7 +113,7 @@ assets:
 pwa:
   enabled: true # the option for PWA feature
 
-paginate: 10
+paginate: 5
 
 # ------------ The following options are not recommended to be modified ------------------
 

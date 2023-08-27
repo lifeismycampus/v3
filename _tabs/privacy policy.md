@@ -1,6 +1,6 @@
 ---
 # the default layout is 'page'
-icon: fas fa-check-square
+icon: fas fa-user-secret
 order: 8
 ---
 
