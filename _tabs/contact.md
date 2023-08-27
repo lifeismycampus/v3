@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-envelope
-order: 5
+order: 6
 ---
 
 Connect with Us

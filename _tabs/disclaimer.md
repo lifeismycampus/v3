@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-exclamation-triangle
-order: 6
+order: 7
 ---
 
 The following disclaimer is applicable to the website – https://lifeismycampus.com. By accessing and using this website, you agree to the terms outlined in this disclaimer.

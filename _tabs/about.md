@@ -1,15 +1,19 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 4
+order: 5
 ---
 
-Blog ini memiliki tujuan utama sebagai sumber dokumentasi dan berbagi materi yang berkaitan dengan mata pelajaran jaringan komputer.
+Welcome to our Blog!
 
-Materi yang tersaji sebagian akan berbentuk jobsheet praktikum sehingga anda akan mendapati tutorial yang menjelaskan langkah-langkah yang harus diikuti, lengkap dengan screenshot atau gambar untuk membantu Anda memahami konsep serta konfigurasi perangkat jaringan komputer. 
+Our blog serves as a primary source of documentation and knowledge sharing in the realm of computer networking. Our goal is to provide comprehensive materials and resources related to the subject.
 
-Selain itu, blog ini juga mempresentasikan artikel tentang perkembangan teknologi perangkat jaringan terbaru yang bisa menjadi referensi bagi Anda yang ingin belajar lebih banyak tentang bidang ini. 
+A significant portion of the content is structured as practical jobsheets, ensuring that you receive tutorials that meticulously outline the necessary steps. These guides come complete with screenshots and images, facilitating a clear understanding of the concepts and configurations within the realm of computer networking.
 
-Blog ini juga menyediakan solusi bagi pembaca yang memiliki masalah atau ingin tutorial tertentu melalui komentar atau halaman kontak yang tersedia. 
+Furthermore, our blog showcases articles focusing on the latest technological advancements in network devices. These articles are designed to be a valuable reference for individuals seeking to expand their understanding of this field.
 
-Jadi, jangan ragu untuk bertanya atau memberikan saran kepada kami. Kami senang dapat membantu Anda memahami lebih banyak tentang konsep dan konfigurasi perangkat jaringan komputer.
+We are committed to fostering a dynamic interaction. Through the comment section or our dedicated contact page, we offer solutions to your queries, problems, or requests for specific tutorials.
+
+Feel free to engage with us. Your questions and suggestions are invaluable to us. We take great pleasure in assisting you in unraveling the intricacies of computer network concepts and configurations.
+
+Thank you for being a part of our journey.
