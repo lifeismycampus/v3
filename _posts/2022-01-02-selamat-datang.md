@@ -7,15 +7,9 @@ categories: [Blog]
 tags: [lainnya]
 ---
 
-Halo teman-teman semua, salam kenal.
+Halo semuanya, salam kenal nama saya Angga! Senang bisa berkenalan melalui blog saya di
 
-Nama saya Angga Indra Adi Pradana atau bisa dipanggil [Angga](https://tkj.smkn1gombong.sch.id/2021/09/17/angga-indra-adi-pradana){:target="\_blank"}, senang bisa berkenalan dengan anda melalui blog yang saya beri nama
-
-> [Life is My Campus "Practice makes ~~perfect~~ improvement."](https://lifeismycampus.com/){:target="\_blank"}
-
-bisa diakses pada laman
-
-> [https://lifeismycampus.com](https://lifeismycampus.com/){:target="\_blank"}
+**Life is My Campus** – _Practice doesn’t make perfect but improvement._
 
 Saya adalah pengajar SMK untuk kompetensi keahlian Teknik Komputer dan Jaringan dengan salah satu materi utama adalah jaringan komputer.
 
@@ -27,13 +21,9 @@ Harapan saya, semoga saya dan anda dapat belajar bersama, saling berbagi ilmu pe
 
 Jika anda memiliki pertanyaan, kritik, saran, maupun masukan agar blog maupun informasi yang saya sampaikan menjadi lebih baik, jangan ragu untuk menghubungi saya melalui komentar atau melalui halaman kontak yang tersedia di blog ini.
 
-Selain di sini, saya juga aktif menulis di web blog saya lainnya yaitu
+Selain dari blog ini, saya juga aktif menulis di blog lain di
 
-> [NGLINUX "Ngonfig pakai Linux, yuk!"](https://nglinux.com){:target="\_blank"}
-
-bisa diakses pada laman
-
-> [https://nglinux.com](https://nglinux.com){:target="\_blank"}
+**NGLINUX** – _Nyoba konfiG LINUX, yuk!_
 
 yang merupakan tempat saya mendokumentasikan materi pembelajaran untuk siswa saya terutama tentang konfigurasi Linux baik desktop maupun server, saya tunggu kunjungan anda.
 
