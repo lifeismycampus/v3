@@ -4,18 +4,24 @@ icon: fas fa-envelope
 order: 5
 ---
 
-<!-- <form action="https://formspree.io/{{site.email}}" method="POST"> -->
-<form action="https://formspree.io/f/mgedykzb" method="POST">
-<!-- <p class="mb-4">Please send your message to {{ site.title }}. We will reply as soon as possible!</p> -->
-<p class="mb-4">Silahkan kirim pesan Anda ke {{ site.title }}. Kami akan berusaha membalas secepatnya! </p>
-<div class="form-group row">
-<div class="col-md-6">
-<input class="form-control" type="text" name="name" placeholder="Nama*" required>
-</div>
-<div class="col-md-6">
-<input class="form-control" type="email" name="_replyto" placeholder="Alamat E-mail*" required>
-</div>
-</div>
-<textarea rows="8" class="form-control mb-3" name="message" placeholder="Pesan*" required></textarea>    
-<input class="btn btn-dark" type="submit" value="Send">
-</form>
+  <form action="action_page.php">
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
