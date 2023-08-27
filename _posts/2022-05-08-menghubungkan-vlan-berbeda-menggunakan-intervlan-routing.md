@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Menghubungkan VLAN berbeda Menggunakan InterVLAN Routing
+title: Menghubungkan VLAN Berbeda dengan InterVLAN Routing
 date: 2022-05-08 00:00 +0000
 author: angga
-categories: [ Materi, Praktikum ]
-tags: [ cisco, routing, switching, vlan ]
+categories: [Materi, Praktikum]
+tags: [cisco, routing, switching, vlan]
 ---
 
 ## Pengertian
 
-Inter-VLAN routing adalah proses memungkinkan komunikasi antar VLAN (Virtual LAN) pada jaringan. 
+Inter-VLAN routing adalah proses memungkinkan komunikasi antar VLAN (Virtual LAN) pada jaringan.
 
 Tanpa inter-VLAN routing, setiap VLAN hanya dapat berkomunikasi dengan VLAN lain pada switch saja, tidak dapat berkomunikasi dengan VLAN lain pada jaringan.
 
@@ -23,19 +23,19 @@ Kelebihan yang didapat jika mengaplikasikan teknik konfigurasi Inter-VLAN Routin
 
 1. Fleksibilitas
 
-    Inter-VLAN routing memungkinkan administrator jaringan untuk memisahkan lalu lintas jaringan berdasarkan kebutuhan, sehingga memungkinkan jaringan yang lebih fleksibel.
+   Inter-VLAN routing memungkinkan administrator jaringan untuk memisahkan lalu lintas jaringan berdasarkan kebutuhan, sehingga memungkinkan jaringan yang lebih fleksibel.
 
 1. Ekonomis
 
-    Inter-VLAN routing memungkinkan pengelolaan jaringan yang lebih efisien dan mengurangi biaya investasi dalam peralatan jaringan.
+   Inter-VLAN routing memungkinkan pengelolaan jaringan yang lebih efisien dan mengurangi biaya investasi dalam peralatan jaringan.
 
 1. Scalability
 
-    Inter-VLAN routing memungkinkan jaringan untuk dapat berkembang dan bertambah besar sesuai dengan kebutuhan.
+   Inter-VLAN routing memungkinkan jaringan untuk dapat berkembang dan bertambah besar sesuai dengan kebutuhan.
 
 1. Peningkatan Keamanan
 
-    Inter-VLAN routing memungkinkan administrator jaringan untuk membatasi lalu lintas jaringan dan memastikan bahwa lalu lintas jaringan tidak terkendali.
+   Inter-VLAN routing memungkinkan administrator jaringan untuk membatasi lalu lintas jaringan dan memastikan bahwa lalu lintas jaringan tidak terkendali.
 
 ### Kekurangan
 
@@ -43,19 +43,19 @@ Kekurangan yang didapat jika mengaplikasikan teknik konfigurasi Inter-VLAN Routi
 
 1. Komplikasi Konfigurasi
 
-    Konfigurasi Inter-VLAN routing dapat menjadi rumit dan membutuhkan waktu dan usaha untuk memastikan bahwa konfigurasi benar.
+   Konfigurasi Inter-VLAN routing dapat menjadi rumit dan membutuhkan waktu dan usaha untuk memastikan bahwa konfigurasi benar.
 
 1. Latensi Tinggi
 
-    Inter-VLAN routing dapat mengakibatkan latensi yang lebih tinggi dibandingkan dengan switch VLAN standar, karena data harus melewati router sebelum sampai pada tujuan akhir.
+   Inter-VLAN routing dapat mengakibatkan latensi yang lebih tinggi dibandingkan dengan switch VLAN standar, karena data harus melewati router sebelum sampai pada tujuan akhir.
 
 1. Keamanan yang Kurang
 
-    Inter-VLAN routing dapat meningkatkan risiko keamanan jika tidak diterapkan dengan benar, seperti memperkenalkan risiko akses yang tidak sah.
+   Inter-VLAN routing dapat meningkatkan risiko keamanan jika tidak diterapkan dengan benar, seperti memperkenalkan risiko akses yang tidak sah.
 
 1. Biaya Tinggi
 
-    Implementasi Inter-VLAN routing dapat menjadi mahal, terutama jika membutuhkan peralatan jaringan baru atau perangkat lunak yang kompleks.
+   Implementasi Inter-VLAN routing dapat menjadi mahal, terutama jika membutuhkan peralatan jaringan baru atau perangkat lunak yang kompleks.
 
 ## Metode
 
@@ -95,54 +95,54 @@ jumlah subinterface yang diaktifkan haruslah sejumlah VLAN ID yang butuh untuk d
 
 ## Keamanan
 
-Inter-VLAN routing membutuhkan pengelolaan keamanan untuk memastikan bahwa jaringan aman dan terlindungi dari ancaman keamanan seperti serangan jaringan, akses yang tidak sah, dan lainnya. 
+Inter-VLAN routing membutuhkan pengelolaan keamanan untuk memastikan bahwa jaringan aman dan terlindungi dari ancaman keamanan seperti serangan jaringan, akses yang tidak sah, dan lainnya.
 
 Berikut adalah beberapa konsep keamanan yang penting dalam Inter-VLAN routing:
 
 1. Access Control List (ACL)
 
-    ACL adalah daftar kontrol akses yang menentukan bagaimana paket jaringan diterima atau ditolak oleh perangkat jaringan. 
-    
-    ACL menggunakan aturan khusus untuk menentukan apakah paket diterima atau ditolak.
-    
-    Ini digunakan untuk memastikan bahwa jaringan terlindung dari serangan dan akses yang tidak sah.
+   ACL adalah daftar kontrol akses yang menentukan bagaimana paket jaringan diterima atau ditolak oleh perangkat jaringan.
+
+   ACL menggunakan aturan khusus untuk menentukan apakah paket diterima atau ditolak.
+
+   Ini digunakan untuk memastikan bahwa jaringan terlindung dari serangan dan akses yang tidak sah.
 
 1. Firewall
 
-    Firewall adalah perangkat yang memantau dan mengendalikan akses jaringan. 
-    
-    Firewall memiliki kemampuan untuk menganalisis traffic jaringan dan membuat keputusan apakah traffic tersebut harus diterima atau ditolak. 
-    
-    Firewall biasanya digunakan untuk memblokir serangan jaringan dan membatasi akses yang tidak sah.
+   Firewall adalah perangkat yang memantau dan mengendalikan akses jaringan.
+
+   Firewall memiliki kemampuan untuk menganalisis traffic jaringan dan membuat keputusan apakah traffic tersebut harus diterima atau ditolak.
+
+   Firewall biasanya digunakan untuk memblokir serangan jaringan dan membatasi akses yang tidak sah.
 
 1. VLAN Access Control
 
-    Menentukan VLAN mana yang dapat diakses oleh host atau perangkat tertentu. 
-    
-    Ini membatasi akses yang tidak sah dan memastikan bahwa hanya perangkat yang sah yang dapat mengakses jaringan.
+   Menentukan VLAN mana yang dapat diakses oleh host atau perangkat tertentu.
+
+   Ini membatasi akses yang tidak sah dan memastikan bahwa hanya perangkat yang sah yang dapat mengakses jaringan.
 
 1. Port Security
 
-    Menentukan perangkat apa saja yang dapat mengakses switch melalui port tertentu. 
-    
-    Ini membatasi akses yang tidak sah dan memastikan bahwa hanya perangkat yang sah yang dapat mengakses jaringan.
+   Menentukan perangkat apa saja yang dapat mengakses switch melalui port tertentu.
+
+   Ini membatasi akses yang tidak sah dan memastikan bahwa hanya perangkat yang sah yang dapat mengakses jaringan.
 
 1. Virtual Router Redundancy Protocol (VRRP)
 
-    VRRP memastikan bahwa router tetap aktif dan memberikan solusi backup jika salah satu router gagal. 
-    
-    Ini memastikan bahwa jaringan tetap berfungsi selama ada gangguan.
+   VRRP memastikan bahwa router tetap aktif dan memberikan solusi backup jika salah satu router gagal.
+
+   Ini memastikan bahwa jaringan tetap berfungsi selama ada gangguan.
 
 1. Encryption
 
-    Menggunakan enkripsi untuk memproteksi data yang dikirimkan melalui jaringan. 
-    
-    Ini memastikan bahwa data tidak dapat dicuri atau dibaca oleh pihak yang tidak sah.
+   Menggunakan enkripsi untuk memproteksi data yang dikirimkan melalui jaringan.
+
+   Ini memastikan bahwa data tidak dapat dicuri atau dibaca oleh pihak yang tidak sah.
 
 1. Virtual Routing and Forwarding (VRF)
 
-    VRF adalah teknologi yang memungkinkan jaringan memiliki beberapa routing domain yang terisolasi secara logika dalam satu perangkat. 
-    
-    VRF memastikan bahwa jaringan dapat memiliki routing domain yang terisolasi dan tidak berdampak pada routing domain lainnya. 
-    
-    Ini memastikan bahwa jaringan tetap stabil dan aman meskipun ada perubahan yang terjadi dalam jaringan.
+   VRF adalah teknologi yang memungkinkan jaringan memiliki beberapa routing domain yang terisolasi secara logika dalam satu perangkat.
+
+   VRF memastikan bahwa jaringan dapat memiliki routing domain yang terisolasi dan tidak berdampak pada routing domain lainnya.
+
+   Ini memastikan bahwa jaringan tetap stabil dan aman meskipun ada perubahan yang terjadi dalam jaringan.

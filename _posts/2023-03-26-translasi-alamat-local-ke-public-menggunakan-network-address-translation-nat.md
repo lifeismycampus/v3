@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Translasi Alamat Local ke Public Menggunakan Network Address Translation (NAT)
+title: Translasi Alamat Local ke Public dengan Network Address Translation (NAT)
 date: 2023-03-26 00:00 +0000
 author: angga
 categories: [Materi, Teori]

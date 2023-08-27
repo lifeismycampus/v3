@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Routing Information Protocol (RIP) sebagai Protokol Routing
+title: Routing Information Protocol (RIP) sebagai Protokol Routing pada Jaringan Komputer
 date: 2022-10-09 00:00 +0000
 author: angga
-categories: [ Materi, Teori ]
-tags: [ cisco, routing ]
+categories: [Materi, Teori]
+tags: [cisco, routing]
 ---
 
 ## Pengertian
@@ -19,23 +19,23 @@ Dalam pencarian jalur terbaik pada jaringan routing, RIP menggunakan algoritma r
 
 ## Distance Vector
 
-Distance Vector Routing Protocol adalah protokol routing yang menggunakan jumlah hop sebagai metric utama untuk menentukan jalur terbaik bagi paket data untuk melakukan perjalanan melalui jaringan tertentu. 
+Distance Vector Routing Protocol adalah protokol routing yang menggunakan jumlah hop sebagai metric utama untuk menentukan jalur terbaik bagi paket data untuk melakukan perjalanan melalui jaringan tertentu.
 
-Proses ini dilakukan dengan cara router mem-broadcast secara periodik tentang informasi tabel routing ke router tetangganya dan kemudian memperbarui entri tabel peruteannya berdasarkan informasi yang diterimanya dari router tetangga tersebut. 
+Proses ini dilakukan dengan cara router mem-broadcast secara periodik tentang informasi tabel routing ke router tetangganya dan kemudian memperbarui entri tabel peruteannya berdasarkan informasi yang diterimanya dari router tetangga tersebut.
 
-Hal ini memungkinkan jalur terpendek yang akan diambil untuk paket data, dan memungkinkan jaringan untuk bereaksi dengan cepat terhadap setiap perubahan dalam topologi jaringan. 
+Hal ini memungkinkan jalur terpendek yang akan diambil untuk paket data, dan memungkinkan jaringan untuk bereaksi dengan cepat terhadap setiap perubahan dalam topologi jaringan.
 
 ## Algoritma Bellman-Ford
 
-Algoritma Bellman-Ford adalah cara yang efisien untuk menghitung jalur terpendek antara dua titik dalam jaringan. Algoritma ini sangat berguna ketika menghitung rute dalam jaringan RIP (Routing Information Protocol). 
+Algoritma Bellman-Ford adalah cara yang efisien untuk menghitung jalur terpendek antara dua titik dalam jaringan. Algoritma ini sangat berguna ketika menghitung rute dalam jaringan RIP (Routing Information Protocol).
 
 Algoritma Bellman-Ford bekerja dengan menyebarkan informasi melalui jaringan menggunakan protokol perutean vektor jarak. Setiap node menghitung biaya rute ke tetangganya, dan kemudian meneruskan informasi ini ke node berikutnya. Proses ini diulangi sampai jalur terpendek antara dua titik ditentukan.
 
 ## Perhitungan Metric
 
-RIP menggunakan metric, seperti jumlah hop, untuk menghitung jalur terbaik untuk diambil paket. 
+RIP menggunakan metric, seperti jumlah hop, untuk menghitung jalur terbaik untuk diambil paket.
 
-Paket dikirim di sepanjang jalur dengan hop terendah. 
+Paket dikirim di sepanjang jalur dengan hop terendah.
 
 ![](/assets/img/2022-10-09-protokol-routing-routing-information-protocol-rip/01.png){: .normal }
 

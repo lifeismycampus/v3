@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Jaringan Komputer Routing
+title: Routing pada Jaringan Komputer
 date: 2022-07-10 00:00 +0000
 author: angga
-categories: [ Materi, Teori ]
-tags: [ cisco, routing ]
+categories: [Materi, Teori]
+tags: [cisco, routing]
 ---
 
 ## Pengertian
@@ -60,9 +60,9 @@ Contoh dari pemanfaatan jenis routing ini adalah network administrator melakukan
 
 ### Static Routing
 
-Routing Statis yaitu proses routing di mana penyusunan routing table dilakukan oleh network administrator secara manual. 
+Routing Statis yaitu proses routing di mana penyusunan routing table dilakukan oleh network administrator secara manual.
 
-Pendaftaran jaringan dari/pada setiap perangkat router dikonfigurasi satu per satu. 
+Pendaftaran jaringan dari/pada setiap perangkat router dikonfigurasi satu per satu.
 
 Jika ada perubahan topologi jaringan (perangkat, pengalamatan), maka network administrator harus melakukan konfigurasi ulang.
 
@@ -72,7 +72,7 @@ Jika ada perubahan topologi jaringan (perangkat, pengalamatan), maka network adm
 
 Routing Dinamis yaitu proses routing dengan memanfaatkan routing protocol untuk penemuan dan penentuan jaringan maupun jalur terbaik (best path).
 
-Dengan routing protocol maka jalur terkini pada routing table akan selalu ter-update secara otomatis, seperti ketika terjadi perubahan topologi. 
+Dengan routing protocol maka jalur terkini pada routing table akan selalu ter-update secara otomatis, seperti ketika terjadi perubahan topologi.
 
 Selanjutnya, jika suatu saat jalur utama bermasalah maka otomatis berpindah menggunakan jalur alternatif.
 
@@ -84,23 +84,23 @@ Ada 2 macam, yaitu:
 
 1. Directly-Connected Network
 
-    jaringan ini merupakan jaringan yang terhubung secara langsung. Sedangkan
+   jaringan ini merupakan jaringan yang terhubung secara langsung. Sedangkan
 
-1. Remote Network 
+1. Remote Network
 
-    jaringan ini merupakan jaringan yang tidak terhubung secara langsung, namun harus dilakukan konfigurasi routing.
+   jaringan ini merupakan jaringan yang tidak terhubung secara langsung, namun harus dilakukan konfigurasi routing.
 
 ![](/assets/img/2022-07-10-jaringan-komputer-routing/06.png){: .normal }
 
 Jika dilihat dari router R1, maka
 
-1. LAN 1 dan LAN 2 
+1. LAN 1 dan LAN 2
 
-    merupakan directly-connected network, sedangkan
+   merupakan directly-connected network, sedangkan
 
-1. LAN 3 dan LAN 4 
+1. LAN 3 dan LAN 4
 
-    merupakan remote network.
+   merupakan remote network.
 
 Bagaimana tipe jaringan bila dilihat dari router R2?
 
@@ -112,12 +112,12 @@ Semakin kecil nilai administrative distance maka protokol tersebut akan semakin 
 
 Beberapa nilai administrative distance sebagai berikut
 
-| Routing Protocol | Administrative Distance |
-|---|---|
-| Directly-connected | 0 |
-| Static route | 1 |
-| Internal EIGRP | 90 |
-| OSPF | 110 |
-| RIP | 120 |
-| External EIGRP | 170 |
-| Unknown | 255 |
+| Routing Protocol   | Administrative Distance |
+| ------------------ | ----------------------- |
+| Directly-connected | 0                       |
+| Static route       | 1                       |
+| Internal EIGRP     | 90                      |
+| OSPF               | 110                     |
+| RIP                | 120                     |
+| External EIGRP     | 170                     |
+| Unknown            | 255                     |

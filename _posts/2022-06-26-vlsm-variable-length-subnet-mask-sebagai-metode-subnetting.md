@@ -3,8 +3,8 @@ layout: post
 title: VLSM (Variable Length Subnet Mask) sebagai Metode Subnetting
 date: 2022-06-26 00:00 +0000
 author: angga
-categories: [ Materi, Teori ]
-tags: [ cisco, routing, subnetting ]
+categories: [Materi, Teori]
+tags: [cisco, routing, subnetting]
 ---
 
 ## Pengertian
@@ -17,7 +17,7 @@ rhitungan subnet ini diawali dengan mengurutkan mulai dari jaringan dengan kebut
 
 Oleh karena itu, hal pertama yang dilakukan guna menganalisis kebutuhan host suatu network adalah paham terhadap cara menghitung total ip/total host suatu subnet berdasarkan prefix length.
 
-Gunakan kembali [tabel subnetting](/posts/pembagian-alamat-pada-jaringan-komputer-subnetting/#tabel-subnetting){:target="_blank"} untuk menemukan prefix length (subnet mask) yang tepat sesuai host yang dibutuhkan.
+Gunakan kembali [tabel subnetting](/posts/pembagian-alamat-pada-jaringan-komputer-subnetting/#tabel-subnetting){:target="\_blank"} untuk menemukan prefix length (subnet mask) yang tepat sesuai host yang dibutuhkan.
 
 > **Catatan:**
 > Untuk mempelajari subnetting metode VLSM, anda harus memahami terlebih dahulu tentang subnetting metode CIDR.
@@ -34,214 +34,215 @@ Tentukan pembagian jaringan (subnet) menggunakan metode VLSM bila diberikan IP A
 
 1. Urutkan berdasarkan kebutuhan host paling banyak sampai dengan paling sedikit.
 
-    - Departemen B; kebutuhan 40 host.
-    - Departemen A; kebutuhan 23 host`.
-    - Departemen C; kebutuhan 14 host`.
-    - LAN 1; kebutuhan 2 host.
-    - LAN 2; kebutuhan 2 host.
+   - Departemen B; kebutuhan 40 host.
+   - Departemen A; kebutuhan 23 host`.
+   - Departemen C; kebutuhan 14 host`.
+   - LAN 1; kebutuhan 2 host.
+   - LAN 2; kebutuhan 2 host.
 
 1. Tentukan prefix length (subnet mask) dengan nilai total host paling mendekati di atas host kebutuhan dalam jaringan. Gunakan tabel subnetting kembali untuk memudahkan pencarian total ip/host sesuai prefix length.
 
-    - Kebutuhan 40 host, maka prefix /26 (total host 62 buah)
-    - Kebutuhan 23 host, maka prefix /27 (total host 30 buah)
-    - Kebutuhan 14 host, maka prefix /28 (total host 14 buah)
-    - Kebutuhan 2 host, maka prefix /30 (total host 2 buah)
-    - Kebutuhan 2 host, maka prefix /30 (total host 2 buah)
+   - Kebutuhan 40 host, maka prefix /26 (total host 62 buah)
+   - Kebutuhan 23 host, maka prefix /27 (total host 30 buah)
+   - Kebutuhan 14 host, maka prefix /28 (total host 14 buah)
+   - Kebutuhan 2 host, maka prefix /30 (total host 2 buah)
+   - Kebutuhan 2 host, maka prefix /30 (total host 2 buah)
 
 1. Tentukkan subnet mask, jumlah subnet, blok subnet, total host dan ip valid pada setiap jaringan sesuai prefix length.
-   
+
    - **Departemen B (/26)**
-        - Subnet Mask
 
-          = 11111111.111111111.11111111.11000000
+     - Subnet Mask
 
-          = 255.255.255.192
-               
-        - Jumlah Subnet
+       = 11111111.111111111.11111111.11000000
 
-          = 2<sup>2</sup> subnet
+       = 255.255.255.192
 
-          = 4 subnet
+     - Jumlah Subnet
 
-        - Blok Subnet
-          
-          = 256 - 192
+       = 2<sup>2</sup> subnet
 
-          = 64, blok yaitu: **0**, 64, 128, 192
+       = 4 subnet
 
-          blok yang diambil 0 s.d. 63
+     - Blok Subnet
 
-        - Total IP
+       = 256 - 192
 
-          = 2<sup>6</sup> buah
+       = 64, blok yaitu: **0**, 64, 128, 192
 
-          = 64 buah
+       blok yang diambil 0 s.d. 63
 
-        - Total Host
+     - Total IP
 
-          = Total IP - 2 (Network & Broadcast)
+       = 2<sup>6</sup> buah
 
-          = 64 - 2
+       = 64 buah
 
-          = 62 buah 
+     - Total Host
 
-        - IP Valid
+       = Total IP - 2 (Network & Broadcast)
 
-          Kelas C, maka porsi N.N.N.H
-        
-          |  | Subnet | Subnet | Subnet | Subnet |
-          |---|---|---|---|---|
-          | Network ID | .10.0 | .10.64 | .10.128 | .10.192 |
-          | First Host | .10.1 | .10.65 | .10.129 | .10.193 |
-          | Last Host | .10.62 | .10.126 | .10.190 | .10.254 |
-          | Broadcast | .10.63 | .10.127 | .10.191 | .10.255 |
+       = 64 - 2
+
+       = 62 buah
+
+     - IP Valid
+
+       Kelas C, maka porsi N.N.N.H
+
+       |            | Subnet | Subnet  | Subnet  | Subnet  |
+       | ---------- | ------ | ------- | ------- | ------- |
+       | Network ID | .10.0  | .10.64  | .10.128 | .10.192 |
+       | First Host | .10.1  | .10.65  | .10.129 | .10.193 |
+       | Last Host  | .10.62 | .10.126 | .10.190 | .10.254 |
+       | Broadcast  | .10.63 | .10.127 | .10.191 | .10.255 |
 
    - **Departemen A (/27)**
 
-        - Subnet Mask
+     - Subnet Mask
 
-          = 11111111.111111111.11111111.11100000
+       = 11111111.111111111.11111111.11100000
 
-          = 255.255.255.224
-               
-        - Jumlah Subnet
+       = 255.255.255.224
 
-          = 2<sup>3</sup> subnet
+     - Jumlah Subnet
 
-          = 8 subnet
+       = 2<sup>3</sup> subnet
 
-        - Blok Subnet
-          
-          = 256 - 224
+       = 8 subnet
 
-          = 32, blok yaitu: ~~0, 32~~, **64**, 96, 128, ..., 224
+     - Blok Subnet
 
-        - Total IP
+       = 256 - 224
 
-          = 2<sup>5</sup> buah
+       = 32, blok yaitu: ~~0, 32~~, **64**, 96, 128, ..., 224
 
-          = 32 buah
+     - Total IP
 
-        - Total Host
+       = 2<sup>5</sup> buah
 
-          = Total IP - 2 (Network & Broadcast)
+       = 32 buah
 
-          = 32 - 2
+     - Total Host
 
-          = 30 buah 
+       = Total IP - 2 (Network & Broadcast)
 
-        - IP Valid
+       = 32 - 2
 
-          Kelas C, maka porsi N.N.N.H
-        
-          |  | Subnet | Subnet | Subnet | Subnet |
-          |---|---|---|---|---|
-          | Network ID | .10.0 | .10.64 | .10.128 | .10.192 |
-          | First Host | .10.1 | .10.65 | .10.129 | .10.193 |
-          | Last Host | .10.62 | .10.126 | .10.190 | .10.254 |
-          | Broadcast | .10.63 | .10.127 | .10.191 | .10.255 |
+       = 30 buah
+
+     - IP Valid
+
+       Kelas C, maka porsi N.N.N.H
+
+       |            | Subnet | Subnet  | Subnet  | Subnet  |
+       | ---------- | ------ | ------- | ------- | ------- |
+       | Network ID | .10.0  | .10.64  | .10.128 | .10.192 |
+       | First Host | .10.1  | .10.65  | .10.129 | .10.193 |
+       | Last Host  | .10.62 | .10.126 | .10.190 | .10.254 |
+       | Broadcast  | .10.63 | .10.127 | .10.191 | .10.255 |
 
    - **Departemen C (/28)**
 
-        - Subnet Mask
+     - Subnet Mask
 
-          = 11111111.111111111.11111111.11110000
+       = 11111111.111111111.11111111.11110000
 
-          = 255.255.255.240
-               
-        - Jumlah Subnet
+       = 255.255.255.240
 
-          = 2<sup>4</sup> subnet
+     - Jumlah Subnet
 
-          = 16 subnet
+       = 2<sup>4</sup> subnet
 
-        - Blok Subnet
-          
-          = 256 - 240
+       = 16 subnet
 
-          = 16, blok yaitu: ~~0, 16, 32, 48, ...~~, **96**, 112, 128, ..., 240
+     - Blok Subnet
 
-        - Total IP
+       = 256 - 240
 
-          = 2<sup>4</sup> buah
+       = 16, blok yaitu: ~~0, 16, 32, 48, ...~~, **96**, 112, 128, ..., 240
 
-          = 16 buah
+     - Total IP
 
-        - Total Host
+       = 2<sup>4</sup> buah
 
-          = Total IP - 2 (Network & Broadcast)
+       = 16 buah
 
-          = 16 - 2
+     - Total Host
 
-          = 14 buah 
+       = Total IP - 2 (Network & Broadcast)
 
-        - IP Valid
+       = 16 - 2
 
-          Kelas C, maka porsi N.N.N.H
-        
-          |  | Subnet | Subnet | Subnet | Subnet |
-          |---|---|---|---|---|
-          | Network ID | … | .10.96 | .10.112 | … |
-          | First Host | … | .10.97 | .10.113 | … |
-          | Last Host | … | .10.110 | .10.126 | … |
-          | Broadcast | … | .10.111 | .10.127 | … |
+       = 14 buah
+
+     - IP Valid
+
+       Kelas C, maka porsi N.N.N.H
+
+       |            | Subnet | Subnet  | Subnet  | Subnet |
+       | ---------- | ------ | ------- | ------- | ------ |
+       | Network ID | …      | .10.96  | .10.112 | …      |
+       | First Host | …      | .10.97  | .10.113 | …      |
+       | Last Host  | …      | .10.110 | .10.126 | …      |
+       | Broadcast  | …      | .10.111 | .10.127 | …      |
 
    - **LAN 1, LAN 2 (/30)**
 
-        - Subnet Mask
+     - Subnet Mask
 
-          = 11111111.111111111.11111111.11111100
+       = 11111111.111111111.11111111.11111100
 
-          = 255.255.255.252
-               
-        - Jumlah Subnet
+       = 255.255.255.252
 
-          = 2<sup>6</sup> subnet
+     - Jumlah Subnet
 
-          = 64 subnet
+       = 2<sup>6</sup> subnet
 
-        - Blok Subnet
-          
-          = 256 - 252
+       = 64 subnet
 
-          = 4, blok yaitu: ~~0, 4, 8, 12, 16, ...~~, **112, 116**, 120, ..., 252
+     - Blok Subnet
 
-        - Total IP
+       = 256 - 252
 
-          = 2<sup>2</sup> buah
+       = 4, blok yaitu: ~~0, 4, 8, 12, 16, ...~~, **112, 116**, 120, ..., 252
 
-          = 4 buah
+     - Total IP
 
-        - Total Host
+       = 2<sup>2</sup> buah
 
-          = Total IP - 2 (Network & Broadcast)
+       = 4 buah
 
-          = 4 - 2
+     - Total Host
 
-          = 2 buah 
+       = Total IP - 2 (Network & Broadcast)
 
-        - IP Valid
+       = 4 - 2
 
-          Kelas C, maka porsi N.N.N.H
-        
-          |  | Subnet | Subnet | Subnet | Subnet |
-          |---|---|---|---|---|
-          | Network ID | … | .10.112 | .10.116 | … |
-          | First Host | … | .10.113 | .10.117 | … |
-          | Last Host | … | .10.114 | .10.118 | … |
-          | Broadcast | … | .10.115 | .10.119 | … |
+       = 2 buah
+
+     - IP Valid
+
+       Kelas C, maka porsi N.N.N.H
+
+       |            | Subnet | Subnet  | Subnet  | Subnet |
+       | ---------- | ------ | ------- | ------- | ------ |
+       | Network ID | …      | .10.112 | .10.116 | …      |
+       | First Host | …      | .10.113 | .10.117 | …      |
+       | Last Host  | …      | .10.114 | .10.118 | …      |
+       | Broadcast  | …      | .10.115 | .10.119 | …      |
 
 ## Kesimpulan
 
 Hasil subnetting pada jaringan di atas menggunakan metode VLSM sebagai berikut
 
-| No | Subnet | Kebutuhan Host | Network ID | Host Range | Broadcast | Total Host | Host Tidak Terpakai |
-|---|---|---|---|---|---|---|---|
-| 1 | Dep B | 40 | 192.168.10.0/26 | 192.168.10.1 - 192.168.10.62 | 192.168.10.63 | 62 | 22 |
-| 2 | Dep A | 23 | 192.168.10.64/27 | 192.168.10.65 - 192.168.10.94 | 192.168.10.95 | 30 | 7 |
-| 3 | Dep C | 14 | 192.168.10.96/28 | 192.168.10.97 - 192.168.10.110 | 192.168.10.111 | 14 | 0 |
-| 4 | LAN 1 | 2 | 192.168.10.112/30 | 192.168.10.113 - 192.168.10.114 | 192.168.10.115 | 2 | 0 |
-| 5 | LAN 2 | 2 | 192.168.10.116/30 | 192.168.10.117 - 192.168.10.118 | 192.168.10.119 | 2 | 0 |
+| No  | Subnet | Kebutuhan Host | Network ID        | Host Range                      | Broadcast      | Total Host | Host Tidak Terpakai |
+| --- | ------ | -------------- | ----------------- | ------------------------------- | -------------- | ---------- | ------------------- |
+| 1   | Dep B  | 40             | 192.168.10.0/26   | 192.168.10.1 - 192.168.10.62    | 192.168.10.63  | 62         | 22                  |
+| 2   | Dep A  | 23             | 192.168.10.64/27  | 192.168.10.65 - 192.168.10.94   | 192.168.10.95  | 30         | 7                   |
+| 3   | Dep C  | 14             | 192.168.10.96/28  | 192.168.10.97 - 192.168.10.110  | 192.168.10.111 | 14         | 0                   |
+| 4   | LAN 1  | 2              | 192.168.10.112/30 | 192.168.10.113 - 192.168.10.114 | 192.168.10.115 | 2          | 0                   |
+| 5   | LAN 2  | 2              | 192.168.10.116/30 | 192.168.10.117 - 192.168.10.118 | 192.168.10.119 | 2          | 0                   |
 
 ## Berlatih
 
@@ -249,12 +250,12 @@ Anda merupakan seorang network administrator suatu perusahaan yang sedang merenc
 
 ![](/assets/img/2022-06-26-vlsm-variable-length-subnet-mask-sebagai-metode-subnetting/02.png){: .normal }
 
-Perusahaan tersebut memiliki 4 bidang kerja dengan berbagai jumlah kebutuhan alamat host sebagai berikut 
+Perusahaan tersebut memiliki 4 bidang kerja dengan berbagai jumlah kebutuhan alamat host sebagai berikut
 
-1. Bidang Pemasaran dengan kebutuhan 100 host, 
-1. Bidang Keuangan dengan kebutuhan 25 host, 
-1. Bidang Administrasi dengan kebutuhan 10 host, 
-1. Bidang Sumberdaya dengan kebutuhan 35 host, dan 
+1. Bidang Pemasaran dengan kebutuhan 100 host,
+1. Bidang Keuangan dengan kebutuhan 25 host,
+1. Bidang Administrasi dengan kebutuhan 10 host,
+1. Bidang Sumberdaya dengan kebutuhan 35 host, dan
 1. 3 buah LAN dengan kebutuhan masing-masing 2 host.
 
 Tentukan pembagian jaringan (subnet) menggunakan metode VLSM bila diberikan IP Address **172.16.0.0/24** sebagai acuan!

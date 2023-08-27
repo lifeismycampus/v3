@@ -3,8 +3,8 @@ layout: post
 title: Routing Dinamis pada Jaringan Komputer
 date: 2022-10-02 00:00 +0000
 author: angga
-categories: [ Materi, Teori ]
-tags: [ cisco, routing ]
+categories: [Materi, Teori]
+tags: [cisco, routing]
 ---
 
 ## Pengertian
@@ -29,16 +29,16 @@ Routing dinamis terjadi karena adanya pertukaran informasi antar perangkat route
 ## Komponen
 
 1. Struktur data
-    
-    merupakan tabel atau database disimpan pada RAM digunakan untuk menjalankan operasi routing.
+
+   merupakan tabel atau database disimpan pada RAM digunakan untuk menjalankan operasi routing.
 
 2. Algoritma routing
 
-    merupakan langkah-langkah teratur yang digunakan untuk pemrosesan informasi routing dan penentuan jalur terbaik.
+   merupakan langkah-langkah teratur yang digunakan untuk pemrosesan informasi routing dan penentuan jalur terbaik.
 
 3. Routing protocol messages
 
-    digunakan untuk menemukan router tetangga serta saling bertukar, mempelajari dan pemeliharaan informasi jaringan routing yang akurat.
+   digunakan untuk menemukan router tetangga serta saling bertukar, mempelajari dan pemeliharaan informasi jaringan routing yang akurat.
 
 ## Karakteristik
 
@@ -46,17 +46,17 @@ Routing dinamis terjadi karena adanya pertukaran informasi antar perangkat route
 
 Perbandingan berikut dapat menjadi pertimbangan untuk suatu jaringan apakah akan dikonfigurasi menggunakan teknik routing statis ataupun routing dinamis.
 
-| Perbandingan | Routing Statis | Routing Dinamis |
-|---|---|---|
-| Konfigurasi routing | Dilakukan secara manual | Dilakukan secara otomatis |
-| Penyusunan routing table | Seluruh rute di-entry satu per satu oleh network admin | Entry terisi otomatis |
-| Router Iain | Dikenalkan oleh network admin | Dikenali secara otomatis ketika terjadi perubahan topologi jaringan |
-| Algoritma routing | Tidak mendukung algoritma routing | Mendukung algoritma yang rumit untuk kebutuhan routing |
-| Sekala Penggunaan | Pada jaringan kecil | Pada jaringan besar |
-| Sambungan terputus | Mengacaukan perubahan rute | Tidak mengacaukan perubahan rute |
-| Keamanan | Lebih aman karena tidak ada advertisement yang dikirim bersamaan dengan data | Kurang aman karena mengirimkan multicast dan broadcast |
-| Protokol routing | Tidak menggunakan protokol routing pada prosesnya | Menggunakan protokol routing (seperti RIP, EIGRP, dll) pada seluruh proses routing-nya |
-| Sumber daya tambahan | Tidak mengonsumsi sumber daya tambahan | Membutuhkan sumber daya tambahan (seperti CPU, memory, bandwidth, dll) |
+| Perbandingan             | Routing Statis                                                               | Routing Dinamis                                                                        |
+| ------------------------ | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Konfigurasi routing      | Dilakukan secara manual                                                      | Dilakukan secara otomatis                                                              |
+| Penyusunan routing table | Seluruh rute di-entry satu per satu oleh network admin                       | Entry terisi otomatis                                                                  |
+| Router Iain              | Dikenalkan oleh network admin                                                | Dikenali secara otomatis ketika terjadi perubahan topologi jaringan                    |
+| Algoritma routing        | Tidak mendukung algoritma routing                                            | Mendukung algoritma yang rumit untuk kebutuhan routing                                 |
+| Sekala Penggunaan        | Pada jaringan kecil                                                          | Pada jaringan besar                                                                    |
+| Sambungan terputus       | Mengacaukan perubahan rute                                                   | Tidak mengacaukan perubahan rute                                                       |
+| Keamanan                 | Lebih aman karena tidak ada advertisement yang dikirim bersamaan dengan data | Kurang aman karena mengirimkan multicast dan broadcast                                 |
+| Protokol routing         | Tidak menggunakan protokol routing pada prosesnya                            | Menggunakan protokol routing (seperti RIP, EIGRP, dll) pada seluruh proses routing-nya |
+| Sumber daya tambahan     | Tidak mengonsumsi sumber daya tambahan                                       | Membutuhkan sumber daya tambahan (seperti CPU, memory, bandwidth, dll)                 |
 
 ### Kelebihan
 
@@ -86,24 +86,24 @@ Protokol ini mengijinkan router-router tersebut untuk bertukar ataupun berbagi i
 
 Router menggunakan informasi ini untuk membangun dan memperbaiki maupun melakukan update terkini routing table.
 
-Secara umum, routing dinamis dibagi menjadi 
+Secara umum, routing dinamis dibagi menjadi
 
-1. IGP (Interior Gateway Protocol) dan 
-1. EGP (Exterior Gateway Protocol). 
+1. IGP (Interior Gateway Protocol) dan
+1. EGP (Exterior Gateway Protocol).
 
 Macam-macam protokol routing dan algoritma yang digunakan adalah sebagai berikut:
 
 1. IGP (Interior Gateway Protocol)
-    
-    1. RIP (Routing Information Protocol): Distance Vector
-    1. IGRP (Interior Gateway Routing Protocol): Distance Vector
-    1. EIGRP (Enhanced Interior Gateway Routing Protocol): Hybrid
-    1. OSPF (Open Shortest Path First): Link State
-    1. IS-IS (Intermediate System to Intermediate System): Link State
+
+   1. RIP (Routing Information Protocol): Distance Vector
+   1. IGRP (Interior Gateway Routing Protocol): Distance Vector
+   1. EIGRP (Enhanced Interior Gateway Routing Protocol): Hybrid
+   1. OSPF (Open Shortest Path First): Link State
+   1. IS-IS (Intermediate System to Intermediate System): Link State
 
 1. EGP (Exterior Gateway Protocol)
-  
-    1. BGP (Border Gateway Protocol): Path Vector
+
+   1. BGP (Border Gateway Protocol): Path Vector
 
 Pembagian jenis protokol routing seperti pada bagan berikut
 
@@ -115,7 +115,7 @@ Autonomous System (AS) adalah alamat jaringan dijalankan oleh yang suatu operato
 
 ![](/assets/img/2022-10-02-routing-dinamis-pada-jaringan-komputer/04.png){: .normal }
 
-Kaitannya dengan AS, Interior Gateway Protocol (IGP) diaplikasikan pada pengelolaan routing suatu jaringan dalam sebuah AS (Autonomous System), misal dalam suatu jaringan ISP. 
+Kaitannya dengan AS, Interior Gateway Protocol (IGP) diaplikasikan pada pengelolaan routing suatu jaringan dalam sebuah AS (Autonomous System), misal dalam suatu jaringan ISP.
 
 ![](/assets/img/2022-10-02-routing-dinamis-pada-jaringan-komputer/05.png){: .normal }
 
@@ -130,12 +130,12 @@ Algoritma protokol routing distance vector ini diibaratkan seperti papan penunju
 Router harus memutuskan jalur paket berdasarkan distance dan vector.
 
 1. Distance
-    
-    jauhnya source network menuju destination berdasarkan metric. Metric dihitung dari hop count, cost, bandwidth, delay, dll.
+
+   jauhnya source network menuju destination berdasarkan metric. Metric dihitung dari hop count, cost, bandwidth, delay, dll.
 
 1. Vector (Direction)
 
-    arah dari next hop router untuk menuju ke destination.
+   arah dari next hop router untuk menuju ke destination.
 
 Protocol jenis Distance Vector hanya mengetahui route dan metric untuk menuju destination tertentu.
 

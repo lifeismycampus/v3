@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OSI (Open Systems Interconnection) Layers pada Jaringan
+title: OSI (Open Systems Interconnection) Layers sebagai Standarisasi Jaringan Komputer
 date: 2022-01-16 00:00 +0000
 author: angga
 categories: [Materi, Teori]
@@ -65,61 +65,61 @@ Berikut adalah contoh perangkat/layanan nyata yang terdapat pada masing-masing l
 
 1. Lapisan Fisik (Physical Layer):
 
-    1. Kabel UTP (Unshielded Twisted Pair)
-    1. Kabel Coaxial
-    1. Kabel Serat Optik
-    1. Hub (Repeater Hubs)
-    1. NIC (Network Interface Card)
+   1. Kabel UTP (Unshielded Twisted Pair)
+   1. Kabel Coaxial
+   1. Kabel Serat Optik
+   1. Hub (Repeater Hubs)
+   1. NIC (Network Interface Card)
 
 1. Lapisan Data Link (Data Link Layer):
 
-    1. Switch
-    1. Bridge
-    1. MAC Address (Media Access Control Address)
-    1. Frame
-    1. Ethernet
+   1. Switch
+   1. Bridge
+   1. MAC Address (Media Access Control Address)
+   1. Frame
+   1. Ethernet
 
 1. Lapisan Jaringan (Network Layer):
 
-    1. Router
-    1. IP Address (Internet Protocol Address)
-    1. ICMP (Internet Control Message Protocol)
-    1. Routing Protocols (OSPF, BGP, RIP)
-    1. Subnetting
+   1. Router
+   1. IP Address (Internet Protocol Address)
+   1. ICMP (Internet Control Message Protocol)
+   1. Routing Protocols (OSPF, BGP, RIP)
+   1. Subnetting
 
 1. Lapisan Transport (Transport Layer):
 
-    1. TCP (Transmission Control Protocol)
-    1. UDP (User Datagram Protocol)
-    1. Port Number
-    1. Flow Control
-    1. Error Checking
+   1. TCP (Transmission Control Protocol)
+   1. UDP (User Datagram Protocol)
+   1. Port Number
+   1. Flow Control
+   1. Error Checking
 
 1. Lapisan Session (Session Layer):
 
-    1. API (Application Programming Interface)
-    1. NetBIOS (Network Basic Input/Output System)
-    1. Named Pipes
-    1. RPC (Remote Procedure Call)
-    1. Sockets
+   1. API (Application Programming Interface)
+   1. NetBIOS (Network Basic Input/Output System)
+   1. Named Pipes
+   1. RPC (Remote Procedure Call)
+   1. Sockets
 
 1. Lapisan Presentasi (Presentation Layer):
 
-    1. Encryption/Decryption
-    1. Data Compression
-    1. ASCII (American Standard Code for Information Interchange)
-    1. JPEG (Joint Photographic Experts Group)
-    1. MIME (Multipurpose Internet Mail Extensions)
+   1. Encryption/Decryption
+   1. Data Compression
+   1. ASCII (American Standard Code for Information Interchange)
+   1. JPEG (Joint Photographic Experts Group)
+   1. MIME (Multipurpose Internet Mail Extensions)
 
 1. Lapisan Aplikasi (Application Layer):
 
-    1. HTTP (Hypertext Transfer Protocol)
-    1. FTP (File Transfer Protocol)
-    1. SMTP (Simple Mail Transfer Protocol)
-    1. SSH (Secure Shell)
-    1. DNS (Domain Name System)
+   1. HTTP (Hypertext Transfer Protocol)
+   1. FTP (File Transfer Protocol)
+   1. SMTP (Simple Mail Transfer Protocol)
+   1. SSH (Secure Shell)
+   1. DNS (Domain Name System)
 
-OSI model ini adalah referensi teoritis yang digunakan untuk memahami komunikasi jaringan secara umum. 
+OSI model ini adalah referensi teoritis yang digunakan untuk memahami komunikasi jaringan secara umum.
 Sedangkan biasanya implementasi nyata dalam jaringan bisa lebih kompleks dan dapat melibatkan beberapa lapisan sekaligus ataupun menggunakan protokol dan teknologi khusus yang sesuai dengan kebutuhan.
 
 ## Pengingat
