@@ -198,6 +198,8 @@ Sw1(config)#
 Sw1(config)#do show vlan brief
 ```
 
+`show` dapat pula dieksekusi pada Configuration Mode dengan menambahkan `do` pada awal perintah
+
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/09.png){: .normal }
 
 #### Langkah ke-6: mendaftarkan suatu port sebagai anggota VLAN baru
@@ -206,8 +208,8 @@ Port Fa0/2 sebagai anggota VLAN 200
 
 ```console
 Sw1(config)#interface fastEthernet 0/2
-Sw1(config-if)#Switchport mode access
-Sw1(config-if)#Switchport access vlan 200
+Sw1(config-if)#switchport mode access
+Sw1(config-if)#switchport access vlan 200
 Sw1(config-if)#exit
 Sw1(config)#
 ```
@@ -230,8 +232,8 @@ Port Fa0/11, Fa0/12, ... s.d. Fa0/20 sebagai anggota VLAN 200
 
 ```console
 Sw1(config)#interface range fastEthernet 0/11-20
-Sw1(config-if-range)#Switchport mode access
-Sw1(config-if-range)#Switchport access vlan 200
+Sw1(config-if-range)#switchport mode access
+Sw1(config-if-range)#switchport access vlan 200
 Sw1(config-if-range)#exit
 Sw1(config)#
 ```
