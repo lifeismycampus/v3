@@ -9,42 +9,111 @@ tags: [cisco, switching, vlan]
 
 ## Ulasan
 
-Virtual Local Area Network (VLAN) adalah teknologi jaringan yang memungkinkan untuk membagi jaringan fisik menjadi beberapa jaringan virtual yang terpisah.
+Virtual Local Area Network (VLAN) merupakan teknologi jaringan yang memungkinkan pembagian jaringan fisik menjadi sejumlah jaringan virtual yang terpisah.
 
-Setiap VLAN dapat berfungsi sebagai jaringan terpisah dengan alamat IP yang unik dan konfigurasi jaringan yang berbeda.
+Masing-masing VLAN berperan sebagai entitas jaringan independen dengan alamat IP yang unik serta konfigurasi jaringan yang berbeda.
 
-Ini memungkinkan administrator jaringan untuk mengelompokkan perangkat jaringan berdasarkan fungsionalitas, keamanan, atau organisasi, sehingga mempermudah pemeliharaan dan meningkatkan keamanan jaringan.
+Inovasi ini memfasilitasi administrator jaringan dalam mengelompokkan perangkat-perangkat jaringan berdasarkan fungsi, tingkat keamanan, atau struktur organisasi. Dengan demikian, pemeliharaan jaringan menjadi lebih terstruktur dan tingkat keamanan jaringan meningkat.
 
-VLAN juga mempermudah manajemen jaringan dan dapat mengurangi congestions pada jaringan dengan membatasi lalu lintas jaringan yang tidak diinginkan.
+Kelebihan lain dari VLAN adalah kemudahan dalam manajemen jaringan serta kemampuannya dalam mengurangi kemacetan (congestion) pada jaringan dengan mengatur lalu lintas jaringan yang tidak diinginkan.
 
-Pada praktikum kali ini akan ditampilkan langkah konfigurasi VLAN yang dikelompokkan berdasarkan interface pada switch.
+Pada kesempatan praktikum kali ini, kami akan membahas langkah-langkah konfigurasi VLAN yang dikelompokkan berdasarkan port pada switch.
 
 ## Alat dan Bahan
 
-1. Komputer
+1. Perangkat Komputer
 2. Cisco Packet Tracer
-3. Cisco Skills for All / Akun Cisco NetAcad
+3. Akun [Cisco Skills for All](https://skillsforall.com/) / [Cisco NetAcad](https://www.netacad.com/)
 
 ## Perintah CLI
 
-| Perintah                                                    | Deskripsi                                                 |
-| ----------------------------------------------------------- | --------------------------------------------------------- |
-| Switch#show running-config                                  | Menampilkan konfigurasi yang sedang berjalan              |
-| Switch#show vlan brief                                      | Menampilkan tabel VLAN                                    |
-| Switch#copy running-config startup-config                   | Menyimpan konfigurasi berjalan ke konfigurasi startup     |
-| Switch#configure terminal                                   | Merubah Privileged EXEC menjadi Global Configuration Mode |
-| Switch(config)#vlan `vlan-id`                               | Mengaktifkan VLAN ID                                      |
-| Switch(config-vlan)#name `vlan-name`                        | Memberi nama pada VLAN ID aktif                           |
-| Switch(config)#interface `port-type` `port-num`             | Mengaktiftan suatu interface                              |
-| Switch(config)#interface range `port-type` `port-num`-`num` | Mengaktifkan interface secara serentak                    |
-| Switch(config-if)#switchport mode access                    | Menjadikan interface aktif sebagai access link            |
-| Switch(config-if)#switchport access vlan `vlan-id`          | Menjadikan interface aktif sebagai anggota VLAN ID        |
-| Switch(config-if)#exit                                      | Keluar ke mode sebelumnya                                 |
-| Switch(config-if)#end                                       | Keluar ke Privileged EXEC                                 |
+Dalam CLI (Command Line Interface) Cisco Packet Tracer, terdapat beberapa mode yang memungkinkan pengguna untuk berinteraksi dengan perangkat switch. Berikut adalah penjelasan tentang masing-masing mode tersebut:
+
+1. User EXEC Mode (Mode Pengguna)
+
+   Ini adalah mode awal setelah Anda masuk ke CLI. Mode ini memberikan akses terbatas ke perintah dasar seperti melihat informasi dasar tentang perangkat dan menjalankan perintah yang bersifat umum. Biasanya ditandai dengan tanda `>`, misalnya: `Switch>`. Dalam mode ini, Anda hanya dapat menjalankan perintah dasar seperti 'show' dan 'ping' untuk melihat informasi dasar dan menguji konektivitas.
+
+1. Privileged EXEC Mode (Mode Eksekutif dengan Hak Akses)
+
+   Untuk masuk ke mode ini dari mode pengguna, Anda dapat menggunakan perintah 'enable'. Mode ini memberikan hak akses lebih tinggi dan memungkinkan Anda menjalankan perintah yang lebih kuat dan merubah konfigurasi. Anda dapat melakukan perintah seperti 'show running-config' untuk melihat konfigurasi yang sedang berjalan dan 'copy' untuk menyimpan konfigurasi.
+
+1. Global Configuration Mode (Mode Konfigurasi Global)
+
+   Setelah masuk ke mode privileged EXEC, Anda dapat masuk ke mode konfigurasi global dengan perintah 'configure terminal' atau 'conf t'. Mode ini memungkinkan Anda untuk mengkonfigurasi berbagai pengaturan global pada perangkat switch, termasuk pengaturan VLAN, antarmuka, dan banyak lagi.
+
+1. Interface Configuration Mode (Mode Konfigurasi Antarmuka)
+
+   Dalam mode konfigurasi global, Anda dapat memasuki mode konfigurasi antarmuka dengan perintah seperti 'interface GigabitEthernet0/1'. Ini memungkinkan Anda untuk mengkonfigurasi pengaturan yang terkait dengan antarmuka tertentu, seperti VLAN, mode antarmuka, dan lain-lain.
+
+1. VLAN Configuration Mode (Mode Konfigurasi VLAN)
+
+   Ketika Anda berada dalam mode konfigurasi antarmuka, Anda juga dapat masuk ke mode konfigurasi VLAN dengan perintah seperti 'switchport access vlan'. Mode ini memungkinkan Anda untuk mengkonfigurasi atribut VLAN untuk antarmuka yang bersangkutan.
+
+Setiap mode ini memiliki tingkat akses yang berbeda dan memungkinkan Anda untuk melakukan berbagai tindakan tergantung pada tujuan dan hak akses Anda. Pindah antara mode-mode ini memungkinkan pengguna untuk menjalankan perintah yang sesuai dengan kebutuhan mereka dalam mengelola dan mengkonfigurasi perangkat switch.
+
+Perintah yang digunakan pada praktikum kali ini yaitu:
+
+1. Switch#show running-config
+
+   Perintah ini digunakan untuk menampilkan konfigurasi yang sedang berjalan pada switch, yang mencakup semua konfigurasi yang dibuat dalam berbagai mode. Ini memberikan tampilan rinci tentang pengaturan dan konfigurasi saat ini pada switch.
+
+2. Switch#show vlan
+
+   Perintah ini digunakan untuk menampilkan informasi tentang semua VLAN yang dikonfigurasi pada switch. Ini memberikan detail seperti ID VLAN, nama, dan port yang terkait.
+
+3. Switch#show vlan brief
+
+   Perintah ini memberikan tampilan ringkasan tentang informasi VLAN pada switch. Ini menampilkan daftar singkat VLAN yang dikonfigurasi beserta ID dan penugasan port.
+
+4. Switch#copy running-config startup-config
+
+   Perintah ini digunakan untuk menyimpan konfigurasi berjalan saat ini ke dalam konfigurasi startup. Konfigurasi startup adalah konfigurasi yang akan digunakan oleh switch saat dinyalakan atau di-restart.
+
+5. Switch#configure terminal
+
+   Perintah ini memungkinkan pengguna memasuki mode konfigurasi global. Dalam mode ini, berbagai pengaturan global dan konfigurasi untuk switch dapat dikonfigurasi.
+
+6. Switch(config)#hostname 'name'
+
+   Perintah ini digunakan digunakan untuk mengganti atau mengatur nama host dari perangkat switch yang sedang dikonfigurasi. Nama host ini akan muncul di baris perintah CLI dan juga bisa digunakan untuk mengidentifikasi perangkat dalam jaringan.
+
+7. Switch(config)#vlan 'id'
+
+   Perintah ini digunakan dalam mode konfigurasi global untuk membuat atau mengkonfigurasi VLAN dengan ID numerik tertentu. VLAN digunakan untuk membagi jaringan secara logika.
+
+8. Switch(config-vlan)#name 'name'
+
+   Perintah ini, digunakan dalam mode konfigurasi VLAN, memberikan nama yang mudah dibaca pada ID VLAN yang dikonfigurasi. Nama ini membantu mengidentifikasi tujuan atau fungsi VLAN.
+
+9. Switch(config)#interface 'type' 'num'
+
+   Perintah ini digunakan dalam mode konfigurasi global untuk memasuki mode konfigurasi antarmuka tertentu, di mana 'type' mewakili tipe antarmuka (seperti FastEthernet, GigabitEthernet) dan 'num' adalah nomor antarmuka.
+
+10. Switch(config)#interface range 'type' 'num' - 'num'
+
+    Serupa dengan perintah sebelumnya, perintah ini memasuki mode konfigurasi untuk rentang antarmuka berurutan. Ini berguna ketika mengkonfigurasi beberapa antarmuka secara bersamaan.
+
+11. Switch(config-if)#switchport mode access
+
+    Perintah ini digunakan dalam mode konfigurasi antarmuka untuk mengatur antarmuka aktif agar berfungsi sebagai tautan akses. Tautan akses digunakan untuk menghubungkan perangkat pengguna akhir.
+
+12. Switch(config-if)#switchport access vlan 'id'
+
+    Perintah ini, dalam mode konfigurasi antarmuka, menetapkan antarmuka aktif ke VLAN tertentu menggunakan ID-nya. Antarmuka menjadi anggota VLAN yang ditentukan.
+
+13. Switch(config-if)#exit
+
+    Perintah ini keluar dari tingkat mode konfigurasi antarmuka saat ini dan kembali satu tingkat ke mode konfigurasi global.
+
+14. Switch(config-if)#end
+
+    Perintah ini keluar dari mode konfigurasi antarmuka atau mode konfigurasi global dan kembali ke mode privileged EXEC.
+
+Gunakan tombol <kbd>Enter</kbd> untuk mengeksekusi suatu perintah.
 
 ## Langkah Kerja
 
-Pada praktikum kali ini akan terbagi menjadi beberapa langkah yaitu Persiapan, Konfigurasi dan Konfirmasi.
+Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu Persiapan, Konfigurasi, Kesimpulan, dan Berlatih.
 
 ### Persiapan
 
@@ -54,212 +123,149 @@ Pada praktikum kali ini akan terbagi menjadi beberapa langkah yaitu Persiapan, K
 
 #### Spesifikasi
 
-1. VLAN
-   1. ID: 200
-   2. Name: Private
-   3. Membership: 2, 11 s.d. 20
-2. IP Address
-   1. PC1a: 10.100.1.11/24
-   2. PC2a: 10.100.1.21/24
-   3. PC3a: 10.100.1.31/24
+| Switch      | 2950-24                      |
+| ----------- | ---------------------------- |
+| VLAN ID     | 200                          |
+| VLAN Name   | Private                      |
+| VLAN Member | port 2, port 11 s.d. port 20 |
 
 #### Tabel pengalamatan
 
-| Device  | Interface                 | VLAN ID | IP Address  | Subnet Mask   |
-| ------- | ------------------------- | ------- | ----------- | ------------- |
-| PC1a    | Fa0                       | 1       | 10.100.1.11 | 255.255.255.0 |
-| PC2a    | Fa1                       | 200     | 10.100.1.21 | 255.255.255.0 |
-| PC3a    | Fa2                       | 1       | 10.100.1.31 | 255.255.255.0 |
-| Switch1 | Fa0/1                     | 1       | -           | -             |
-| Switch1 | Fa0/2                     | 200     | -           | -             |
-| Switch1 | Fa0/3                     | 1       | -           | -             |
-| Switch1 | Fa0/11, Fa0/12, …, Fa0/20 | 200     | -           | -             |
-| Switch1 | Lainnya                   | 1       | -           | -             |
+| Device | Interface                       | VLAN ID | IP Address  | Subnet Mask   |
+| ------ | ------------------------------- | ------- | ----------- | ------------- |
+| PC1a   | Fa0                             | 1       | 10.100.1.11 | 255.255.255.0 |
+| PC2a   | Fa0                             | 200     | 10.100.1.21 | 255.255.255.0 |
+| PC3a   | Fa0                             | 1       | 10.100.1.31 | 255.255.255.0 |
+| Switch | Fa0/1                           | 1       | -           | -             |
+| Switch | Fa0/2                           | 200     | -           | -             |
+| Switch | Fa0/3                           | 1       | -           | -             |
+| Switch | Fa0/11, Fa0/12, ... s.d. Fa0/20 | 200     | -           | -             |
+| Switch | selain port di atas             | 1       | -           | -             |
 
-### Konfigurasi dan Konfirmasi
+### Konfigurasi
 
-#### PC1a
+#### Langkah ke-1: konfigurasi alamat IP pada PC
 
-1. Konfigurasi alamat IP
+Klik pada PC, buka tab Desktop, pilih menu IP Configuration
 
-   > tab Desktop -> IP Configuration
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/02.png){: .normal }
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/02.png){: .normal }
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/03.png){: .normal }
 
-#### PC2a
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/04.png){: .normal }
 
-1. Konfigurasi alamat IP
+#### Langkah ke-2: konfirmasi keanggotaan default VLAN pada Switch
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/03.png){: .normal }
+Klik pada Switch, buka tab CLI
 
-#### PC3a
+```console
+Switch>enable
+Switch#show vlan brief
+```
 
-1. Konfigurasi alamat IP
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/05.png){: .normal }
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/04.png){: .normal }
+#### Langkah ke-3: konfirmasi PC terhubung dalam 1 segmen jaringan
 
-#### Switch1
+Klik pada PC, buka tab Desktop, pilih menu Command Prompt
 
-1. Mengkonfirmasi default VLAN
+```console
+ping 'target'
+```
 
-   > tab CLI
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/06.png){: .normal }
 
-   ```console
-   Switch>enable
-   Switch#show vlan brief
-   ```
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/07.png){: .normal }
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/05.png){: .normal }
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/08.png){: .normal }
 
-#### PC1a, PC2a, PC3a
+#### Langkah ke-4: mengaktifkan VLAN baru
 
-1. Mengkonfirmasi terhubung jaringan 1 segmen
+Buka kembali tab CLI pada Switch
 
-   > tab Desktop -> Command Prompt
+```console
+Switch#configure terminal
+Switch(config)#hostname Sw1
+Sw1(config)#vlan 200
+Sw1(config-vlan)#name Private
+Sw1(config-vlan)#exit
+Sw1(config)#
+```
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/06.png){: .normal }
+#### Langkah ke-5: mengkonfirmasi aktivasi VLAN baru
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/07.png){: .normal }
+```console
+Sw1(config)#do show vlan brief
+```
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/08.png){: .normal }
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/09.png){: .normal }
 
-#### Switch1
+#### Langkah ke-6: mendaftarkan suatu port sebagai anggota VLAN baru
 
-1. Mengaktifkan VLAN baru
+Port Fa0/2 sebagai anggota VLAN 200
 
-   ```console
-   Switch#configure terminal
-   Switch(config)#hostname Sw1
-   Sw1(config)#vlan 200
-   Sw1(config-vlan)#name Private
-   Sw1(config-vlan)#exit
-   Sw1(config)#
-   ```
+```console
+Sw1(config)#interface fastEthernet 0/2
+Sw1(config-if)#Switchport mode access
+Sw1(config-if)#Switchport access vlan 200
+Sw1(config-if)#exit
+Sw1(config)#
+```
 
-#### Switch1
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/10.png){: .normal }
 
-1. Mengkonfirmasi VLAN baru
+#### Langkah ke-7: konfirmasi jaringan PC setelah VLAN
 
-   ```console
-   Sw1(config)#do show vlan brief
-   ```
+Bandingkan hasil ping antara jaringan 1 segmen dan berbeda segmen
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/09.png){: .normal }
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/11.png){: .normal }
 
-#### Switch1
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/12.png){: .normal }
 
-1. Mendaftarkan keanggotaan VLAN baru pada port Fa0/2
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/13.png){: .normal }
 
-   ```console
-   Sw1(config)#interface fastEthernet 0/2
-   Sw1(config-if)#Switchport mode access
-   Sw1(config-if)#Switchport access vlan 200
-   Sw1(config-if)#exit
-   Sw1(config)#
-   ```
+#### Langkah ke-8: mendaftarkan beberapa port sekaligus sebagai anggota VLAN baru
 
-#### Switch1
+Port Fa0/11, Fa0/12, ... s.d. Fa0/20 sebagai anggota VLAN 200
 
-1. Mengkonfirmasi kenggotaan VLAN baru
+```console
+Sw1(config)#interface range fastEthernet 0/11-20
+Sw1(config-if-range)#Switchport mode access
+Sw1(config-if-range)#Switchport access vlan 200
+Sw1(config-if-range)#exit
+Sw1(config)#
+```
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/10.png){: .normal }
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/14.png){: .normal }
 
-#### PC1a, PC2a, PC3a
+#### Langkah ke-9: mengembangan jaringan VLAN
 
-1. Mengkonfirmasi terhubung jaringan 1 segmen (VLAN ID sama) maupun berbeda segmen (VLAN ID berbeda)
+Menambahkan PC sebagai anggota VLAN
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/11.png){: .normal }
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/15.png){: .normal }
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/12.png){: .normal }
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/16.png){: .normal }
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/13.png){: .normal }
+#### Langkah ke-10: konfirmasi ulang PC terhubung dalam segmen sama maupun berbeda
 
-#### Switch1
+Bandingkan hasil ping antara jaringan 1 segmen dan berbeda segmen
 
-1. Mendaftarkan keanggotaan VLAN baru secara serentak pada port Fa0/11 s.d. Fa0/20
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/17.png){: .normal }
 
-   ```console
-   Sw1(config)#interface range fastEthernet 0/11-20
-   Sw1(config-if-range)#Switchport mode access
-   Sw1(config-if-range)#Switchport access vlan 200
-   Sw1(config-if-range)#exit
-   Sw1(config)#
-   ```
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/18.png){: .normal }
 
-#### Switch1
+#### Langkah ke-11: menyimpan konfigurasi terkini
 
-1. Mengkonfirmasi kenggotaan VLAN baru
+```console
+Sw1#copy running-config startup-config
+```
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/14.png){: .normal }
+### Penarikan Kesimpulan
 
-1. Tambahkan 1 buah PC, sambungkan ke port Fa0/11 sehingga topologi jaringan menjadi sebagai berikut
+Apabila konfigurasi VLAN berhasil diimplementasikan, hanya perangkat yang menjadi anggota dari VLAN ID yang sama yang dapat terhubung. Proses penambahan keanggotaan VLAN berdasarkan port pada perangkat Switch dapat dilakukan secara individual atau kelompok (berdasarkan rentang nomor port).
 
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/15.png){: .normal }
+### Berlatih
 
-#### PC2b
+#### Contoh kasus
 
-1. Konfigurasi alamat IP
-
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/16.png){: .normal }
-
-#### PC2a, PC2b
-
-1. Mengkonfirmasi terhubung jaringan VLAN ID sama
-
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/17.png){: .normal }
-
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/18.png){: .normal }
-
-#### PC1a, PC31
-
-1. Lakukan pengujian terhadap jaringan VLAN ID berbeda, amati hasilnya
-
-#### Switch1
-
-1. Menyimpan konfigurasi terkini
-
-   ```console
-   Sw1#copy running-config startup-config
-   ```
-
-## Kesimpulan
-
-1. Jika konfigurasi VLAN berhasil dilakukan maka perangkat yang dapat terhubung hanya yang merupakan anggota suatu VLAN ID yang sama.
-
-1. Penambahan keanggotaan VLAN berdasarkan port pada perangkat Switch dapat dilakukan secara satu per satu maupun secara sekaligus.
-
-## Berlatih
-
-Sebagai bahan latihan, lakukan konfigurasi VLAN dengan instruksi sebagai berikut
-
-1. Suatu topologi jaringan dirancang sebagai berikut
-
-   ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/19.png){: .normal }
-
-   dengan spesifikasi sebagai berikut
-
-   1. Switch
-      1. Type: 2950-24
-      2. Hostname: SwUtama
-   2. Network
-      1. Net ID: 172.xx.100.0/24
-      2. xx: nomor presensi masing-masing
-   3. VLAN
-      1. ID: 10, Name: Guru, Member: Int 6-10
-      2. ID: 20, Name: Siswa, Member: Int 11-15
-      3. ID: 30, Name: TU, Member: Int 16-20
-
-2. Susun topologi jaringan di atas
-3. Rancanglah tabel pengalamatan seperti contoh di atas
-
-   | Device | Interface | VLAN ID | IP Address | Subnet Mask |
-   | ------ | --------- | ------- | ---------- | ----------- |
-   | PC1    | ...       | ...     | ...        | ...         |
-   | PC2a   | ...       | ...     | ...        | ...         |
-   | PC2b   | ...       | ...     | ...        | ...         |
-   | ...    | ...       | ...     | ...        | ...         |
-   | PC4b   | ...       | ...     | ...        | ...         |
-
-4. Lakukan konfigurasi VLAN sesuai kebutuhan
-5. Lakukan pengamatan dan pengujian pada jaringan yang telah dikonfigurasi
-6. Tulislah laporan/dokumentasi lengkap sesuai template yang tersedia
+#### Instruksi
