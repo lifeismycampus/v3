@@ -9,7 +9,7 @@ tags: [lainnya]
 
 Halo semuanya, salam kenal nama saya Angga! Senang bisa berkenalan melalui blog saya di
 
-**Life is My Campus** – _Practice doesn’t make perfect but improvement._
+**[Life is My Campus](https://lifeismycampus.com)** – _Practice doesn’t make perfect but improvement._
 
 Saya adalah pengajar SMK untuk kompetensi keahlian Teknik Komputer dan Jaringan dengan salah satu materi utama adalah jaringan komputer.
 
@@ -23,7 +23,7 @@ Jika anda memiliki pertanyaan, kritik, saran, maupun masukan agar blog maupun in
 
 Selain dari blog ini, saya juga aktif menulis di blog lain di
 
-**NGLINUX** – _Nyoba konfiG LINUX, yuk!_
+**[NGLINUX](https://nglinux.com)** – _Nyoba konfiG LINUX, yuk!_
 
 yang merupakan tempat saya mendokumentasikan materi pembelajaran untuk siswa saya terutama tentang konfigurasi Linux baik desktop maupun server, saya tunggu kunjungan anda.
 

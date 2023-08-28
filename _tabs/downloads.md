@@ -14,8 +14,10 @@ Please note that these resources are intended for educational and informational 
 
 Thank you for visiting our Downloads page. We hope you find these resources valuable and beneficial to your journey in the world of computer networking. Happy learning!
 
-- Soal PTS 1 Tahun Pelajaran 2022/2023 Administrasi Infrastruktur Jaringan
-  - [Pilihan Ganda](/assets/downloads/2022-23%20PTS1%20-%20XI%20TKJ%20-%20Adm%20Infrastruktur%20Jaringan%20-%20PG.docx)
-  - [Esai](/assets/downloads/2022-23%20PTS1%20-%20XI%20TKJ%20-%20Adm%20Infrastruktur%20Jaringan%20-%20Esai.docx)
-- Soal PAS 1 Tahun Pelajaran 2022/2023 Administrasi Infrastruktur Jaringan
-  - [Pilihan Ganda](/assets/downloads/2022-23%20PAS1%20-%20XI%20TKJ%20-%20Adm%20Infrastruktur%20Jaringan%20-%20PG.docx)
+- Tahun Pelajaran 2022/2023
+  - Soal PTS 1 Tahun Pelajaran 2022/2023 Administrasi Infrastruktur Jaringan
+    - [Pilihan Ganda](/assets/downloads/2022-23%20PTS1%20-%20XI%20TKJ%20-%20Adm%20Infrastruktur%20Jaringan%20-%20PG.docx)
+    - [Esai](/assets/downloads/2022-23%20PTS1%20-%20XI%20TKJ%20-%20Adm%20Infrastruktur%20Jaringan%20-%20Esai.docx)
+- Tahun Pelajaran 2023/2024
+  - Soal PAS 1 Tahun Pelajaran 2022/2023 Administrasi Infrastruktur Jaringan
+    - [Pilihan Ganda](/assets/downloads/2022-23%20PAS1%20-%20XI%20TKJ%20-%20Adm%20Infrastruktur%20Jaringan%20-%20PG.docx)
