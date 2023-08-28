@@ -9,155 +9,193 @@ tags: [cisco, switching, vlan]
 
 ## Pengertian
 
-VLAN (Virtual Local Area Network) adalah suatu cara membagi jaringan fisik menjadi beberapa jaringan virtual yang independen, meskipun berada dalam satu jaringan fisik yang sama.
+VLAN (Virtual Local Area Network) merupakan metode yang memungkinkan pembagian jaringan fisik menjadi beberapa jaringan virtual yang berdiri secara independen, walaupun masih berada dalam satu rangkaian fisik yang sama.
 
-Teknik konfigurasi VLAN ini memungkinkan pengelompokan device jaringan seperti komputer, server, dan peralatan lain menjadi beberapa grup yang terpisah secara logika.
+Teknik konfigurasi VLAN ini mengizinkan pengelompokan perangkat jaringan, seperti komputer, server, dan peralatan lainnya, menjadi beberapa kelompok yang memiliki batas logika yang jelas.
 
-Perangkat jaringan yang mendukung untuk dikonfigurasi protokol tersebut adalah manageable switch.
+![](/assets/img/2022-03-13-pembagian-jaringan-secara-virtual-menggunakan-virtual-local-area-network-vlan/01.png){: .normal }
 
-VLAN menyediakan pemisahan logika pada tingkat switch, sementara subnetting melakukan pemisahan pada tingkat router.
+Dengan penerapan VLAN, efisiensi dalam manajemen dan kinerja jaringan bisa ditingkatkan dengan memanfaatkan pengelompokan yang cerdas dan intuitif.
+
+VLAN memegang peranan penting dalam menangani masalah collision pada jaringan dengan pendekatan yang efisien yaitu membagi jaringan menjadi beberapa broadcast domain yang terpisah.
+
+Dalam kerangka VLAN, setiap pesan broadcast hanya disampaikan ke port-port yang tergabung dalam VLAN yang sama. Hasilnya, aliran pesan broadcast yang diterima oleh setiap perangkat jaringan menjadi lebih terkontrol.
+
+Langkah ini memberikan manfaat signifikan dalam mengurangi kemungkinan collision dalam jaringan dan juga mengoptimalkan kinerja jaringan secara keseluruhan. Dengan demikian, jaringan mampu mengelola aliran data dengan lebih efisien, mendukung stabilitas jaringan, dan memberikan kontribusi yang berarti terhadap pengalaman pengguna yang lebih baik.
+
+## Perangkat
+
+Manfaat dari VLAN muncul melalui perangkat manageable switch, yang memungkinkan konfigurasi ini diterapkan dan dikelola dengan lebih efektif.
+
+![](/assets/img/2022-03-13-pembagian-jaringan-secara-virtual-menggunakan-virtual-local-area-network-vlan/02.png){: .normal }
+
+VLAN berfungsi untuk memisahkan secara logika pada tingkat switch, sedangkan subnetting berperan dalam memisahkan pada tingkat router.
+
+![](/assets/img/2022-03-13-pembagian-jaringan-secara-virtual-menggunakan-virtual-local-area-network-vlan/03.png){: .normal }
 
 ## Karakteristik
 
-Seperti teknik pemisahan jaringan yang lain, tentu saja VLAN mempunyai kelebihan dan kekurangan sebagai karakteristiknya
+Seperti halnya dengan segala teknik pemisahan jaringan lainnya, VLAN juga memiliki kelebihan dan kekurangan yang menjadi ciri khasnya.
 
-### Keuntungan
+### Kelebihan
 
-1. Fleksibilitas
+1. Pemisahan dan Pengaturan yang Lebih Baik
 
-   VLAN memungkinkan pengelompokan user berdasarkan kesamaan departemen, divisi, atau pekerjaan, bukan lokasi fisik.
+   Dengan VLAN, Anda bisa memisahkan perangkat dalam jaringan secara lebih efisien. Ini memungkinkan Anda untuk mengelompokkan perangkat berdasarkan fungsi, departemen, atau keperluan khusus. Pemisahan ini dapat membantu mengoptimalkan kinerja dan manajemen jaringan.
 
-1. Segmentasi LAN
+2. Keamanan yang Ditingkatkan
 
-   VLAN memperkecil ukuran jaringan dengan mengelompokkan user-user ke dalam VLAN-VLAN yang lebih kecil.
+   VLAN memungkinkan Anda untuk membatasi akses antara kelompok perangkat yang berbeda. Hal ini menjaga keamanan data, karena akses hanya diberikan kepada perangkat yang memang membutuhkan. Sebagai contoh, data sensitif dari departemen keuangan dapat diisolasi dari departemen lain, mengurangi risiko peretasan atau akses tidak sah.
 
-1. Keamanan
+3. Efisiensi Penggunaan Bandwidth
 
-   VLAN memisahkan user-user yang bekerja menggunakan data-data yang sensitif pada VLAN yang terpisah, sehingga meningkatkan tingkat keamanan jaringan.
+   Dengan memisahkan perangkat ke dalam VLAN berdasarkan kebutuhan dan fungsinya, lalu lintas data dapat dikendalikan dengan lebih baik. Ini menghindarkan lonjakan trafik yang tidak terduga dan memastikan bandwidth tersedia secara optimal untuk setiap kelompok perangkat.
 
-1. Prioritas Traffic
+4. Penyederhanaan Manajemen
 
-   VLAN memisahkan trafik VoIP dan Data, memungkinkan prioritas diterapkan pada jenis trafik tertentu untuk memastikan kualitas layanan yang baik.
+   VLAN memungkinkan untuk mengelola perangkat secara terpusat dan lebih efisien. Administrasi dan konfigurasi dapat dilakukan pada level VLAN, yang memudahkan dalam mengatur perizinan, kebijakan, dan pembaruan perangkat.
 
-### Kelemahan
+5. Fleksibilitas dalam Pengaturan
 
-1. Kompleksitas
+   Anda bisa merancang konfigurasi jaringan yang fleksibel dan mudah diubah-ubah sesuai kebutuhan. Anda dapat menambah, menghapus, atau memodifikasi VLAN dengan mudah tanpa harus mengubah struktur fisik jaringan.
 
-   Konfigurasi VLAN cenderung kompleks dan membutuhkan keterampilan dan pemahaman yang baik akan jaringan.
+6. Penghematan Biaya
 
-1. Biaya
+   Dengan pemisahan yang cerdas menggunakan VLAN, Anda tidak perlu menginstal kabel fisik baru untuk memisahkan perangkat secara fisik. Ini dapat menghemat biaya instalasi dan perawatan infrastruktur fisik.
 
-   Implementasi VLAN membutuhkan perangkat tambahan, seperti switch VLAN-enabled, yang memperbesar biaya total proyek jaringan.
+### Kekurangan
 
-1. Dukungan Perangkat
+1. Kompleksitas Konfigurasi
 
-   VLAN hanya dapat bekerja dengan baik pada perangkat yang kompatibel dan support VLAN.
+   Konfigurasi awal dan pengelolaan VLAN bisa menjadi kompleks terutama untuk jaringan yang lebih besar dan rumit. Membutuhkan pemahaman yang baik tentang struktur jaringan dan konfigurasi perangkat.
 
-1. Latensi
+1. Penggunaan Sumber Daya
 
-   Terdapat penambahan latensi pada jaringan ketika VLAN digunakan karena paket harus melalui proses tagging dan untagging VLAN.
+   Dalam beberapa kasus, pembagian perangkat ke dalam VLAN yang terlalu detail dapat memerlukan penggunaan sumber daya yang lebih besar. Ini dapat mengakibatkan overhead administratif dan peningkatan beban kerja.
+
+1. Isolasi Berlebihan
+
+   Pemisahan perangkat ke dalam VLAN yang berlebihan dapat mengakibatkan isolasi berlebihan antara perangkat. Hal ini bisa menghambat komunikasi yang seharusnya terjadi untuk tujuan kerja sama dan berbagi informasi.
+
+1. Kesulitan dalam Pemecahan Masalah
+
+   Pada jaringan yang rumit dengan banyak VLAN, memecahkan masalah dapat menjadi lebih sulit. Melacak masalah lintas VLAN atau mengidentifikasi masalah dalam pengaturan konfigurasi mungkin memerlukan waktu lebih lama.
+
+1. Overhead Pengelolaan
+
+   Mengelola banyak VLAN dengan pengaturan yang rumit bisa memerlukan upaya administratif yang signifikan. Perubahan atau pembaruan pada struktur VLAN dapat memerlukan koordinasi yang cermat dan waktu tambahan.
+
+1. Penggunaan Tidak Efisien
+
+   Jika tidak dirancang dengan baik, VLAN bisa saja tidak memberikan efisiensi yang diharapkan. Misalnya, jika pengelompokan perangkat tidak sesuai dengan kebutuhan sebenarnya, hal ini bisa menghambat aliran informasi yang seharusnya terjadi.
+
+1. Keterbatasan Peralatan
+
+   Tidak semua perangkat jaringan mendukung atau dapat diintegrasikan dengan konfigurasi VLAN. Beberapa perangkat mungkin memerlukan upgrade atau penggantian untuk mendukung implementasi ini.
 
 ## Macam
 
-Secara umum ada beberapa jenis VLAN
+1. Default VLAN (VLAN 1)
 
-1. Default VLAN
+   Ini adalah VLAN bawaan dari perangkat switch yang mencakup semua port pada switch tersebut. Meskipun seringkali disarankan untuk mengubah VLAN default untuk keamanan, VLAN ini tetap berperan dalam komunikasi dasar di dalam switch.
 
-   VLAN default adalah VLAN bawaan dari perangkat switch yang mencakup semua port pada switch tersebut.
+1. VLAN Data
 
-1. Data VLAN
-
-   VLAN data digunakan untuk mengklasifikasikan paket data pada jaringan.
+   VLAN ini digunakan untuk mengelompokkan perangkat berdasarkan lalu lintas data. Ini membantu dalam memisahkan dan mengelola lalu lintas dari berbagai departemen atau fungsi dalam jaringan.
 
 1. Voice VLAN
 
-   VLAN suara digunakan untuk mengklasifikasikan paket suara pada jaringan IP telefoni.
+   VLAN suara memprioritaskan dan mengelompokkan lalu lintas suara, seperti pada sistem IP telefoni. Ini membantu memastikan kualitas panggilan dan layanan suara yang optimal.
 
 1. Management VLAN
 
-   VLAN pengelolaan digunakan untuk mengkonfigurasi dan memantau perangkat jaringan.
+   VLAN pengelolaan digunakan untuk mengelompokkan perangkat administratif dan manajemen jaringan. Ini memungkinkan administrator untuk mengakses perangkat jaringan secara terpisah dari lalu lintas data biasa.
 
 1. Native VLAN
 
-   VLAN asli digunakan untuk menentukan VLAN default yang digunakan pada trunk port.
+   VLAN asli digunakan pada port trunk untuk menetapkan VLAN default yang digunakan untuk lalu lintas yang tidak ditag atau yang datang tanpa tag.
 
 ## Keanggotaan
 
-Berikut pengelompokan VLAN berdasarkan kriteria keanggotaan
+Terdapat beberapa cara efektif untuk mendaftarkan perangkat dalam suatu VLAN:
 
-1. Port-based VLAN
+1. Keanggotaan Berdasarkan Port (Port Based)
 
-   VLAN berdasarkan port adalah VLAN yang pengelompokannya didasarkan pada port switch. Setiap port pada switch dapat dikonfigurasi untuk termasuk dalam VLAN tertentu.
+   Metode ini umum digunakan dimana setiap port pada switch dikonfigurasi dengan atribut yang menentukan keanggotaan VLAN. Koneksi perangkat ke port tertentu akan otomatis mengalokasikan keanggotaan perangkat dalam VLAN yang sesuai. Ini mempermudah pengelompokan berdasarkan letak fisik atau tujuan jaringan perangkat.
 
-1. Protocol-based VLAN
+1. Keanggotaan Berdasarkan Alamat MAC (MAC Based)
 
-   VLAN berdasarkan protokol adalah VLAN yang pengelompokannya didasarkan pada jenis protokol jaringan seperti IP, IPX, atau AppleTalk.
+   Keanggotaan VLAN dapat ditentukan melalui alamat MAC perangkat. Switch akan memantau alamat MAC yang terhubung ke suatu port dan menentukan VLAN yang sesuai sesuai dengan konfigurasi yang telah ditetapkan. Metode ini cocok untuk perangkat yang sering berpindah-pindah port tetapi tetap harus berada dalam VLAN yang sama.
 
-1. MAC-based VLAN
+1. Keanggotaan Berdasarkan Protokol (Protocol Based)
 
-   VLAN berdasarkan MAC adalah VLAN yang pengelompokannya didasarkan pada alamat MAC perangkat jaringan.
+   Protokol seperti IP dapat digunakan untuk menentukan keanggotaan VLAN. Misalnya, perangkat yang menggunakan protokol IP tertentu dapat ditempatkan dalam VLAN yang sesuai, seperti penggunaan VLAN khusus untuk VoIP.
 
-1. IP subnet-based VLAN
+1. Keanggotaan Berdasarkan Subnet IP (IP Subnet Based)
 
-   VLAN berdasarkan subnet IP adalah VLAN yang pengelompokannya didasarkan pada subnet jaringan IP.
+   Pengelompokan perangkat dalam VLAN juga bisa didasarkan pada alamat subnet IP. Perangkat dalam subnet yang sama ditempatkan dalam VLAN yang sesuai, memungkinkan pemisahan lalu lintas berdasarkan lokasi fisik atau fungsi.
 
-1. Authentication-based VLAN
+1. Keanggotaan Berdasarkan Otentikasi (Authentication Based)
 
-   VLAN berdasarkan otentikasi adalah VLAN yang pengelompokannya didasarkan pada hasil otentikasi pengguna atau perangkat jaringan.
+   VLAN juga dapat dikelompokkan berdasarkan hasil otentikasi. Setelah pengguna atau perangkat melewati proses otentikasi, mereka ditempatkan dalam VLAN sesuai aturan yang telah ditetapkan. Ini membantu memisahkan lalu lintas berdasarkan tingkat akses dan keamanan.
 
 ## Cara Kerja
 
-Mekanisme kerja VLAN adalah sebagai berikut:
+Proses kerja VLAN dapat diuraikan sebagai berikut:
 
 1. Pengelompokan
 
-   User atau perangkat dalam jaringan dikelompokkan berdasarkan kesamaan departemen, divisi, pekerjaan, atau aplikasi yang digunakan, bukan berdasarkan lokasi fisik.
+   Langkah awal melibatkan pengelompokan pengguna atau perangkat dalam jaringan berdasarkan kesamaan fungsi, tujuan, atau departemen yang bersangkutan. Ini memungkinkan pemisahan lalu lintas berdasarkan karakteristik tertentu daripada hanya berdasarkan lokasi fisik.
 
-1. Tagging
+1. Penandaan (Tagging)
 
-   Setiap paket data yang dikirim oleh user atau perangkat akan diberikan tag identifikasi VLAN. Tag ini menentukan VLAN mana paket data tersebut berasal dan diterima.
+   Setiap kali data dikirim oleh pengguna atau perangkat, paket tersebut diberi tanda identifikasi khusus yang dikenal sebagai tag VLAN. Tag ini berfungsi sebagai label yang mengindikasikan asal VLAN paket dan tujuan VLAN yang dituju.
 
-1. Switching
+1. Pengalihan (Switching)
 
-   Switch akan memeriksa tag VLAN pada setiap paket data yang masuk, dan hanya mengalirkan paket data yang memiliki tag VLAN yang sesuai ke user atau perangkat yang berada dalam VLAN yang sama.
+   Switch akan memeriksa tag VLAN pada setiap paket data yang tiba. Hanya paket dengan tag VLAN yang sesuai yang akan diarahkan ke pengguna atau perangkat yang tergabung dalam VLAN yang sama. Ini memastikan bahwa lalu lintas hanya dikirim ke penerima yang dimaksudkan.
 
-1. Bridging
+1. Penghubungan (Bridging)
 
-   Setelah paket data diterima oleh switch, ia akan melakukan bridging antar VLAN untuk memastikan bahwa paket data dapat diteruskan ke tujuannya.
+   Setelah switch menerima paket data, ia akan melakukan bridging atau penghubungan data antara VLAN yang berbeda. Hal ini memastikan bahwa paket data dapat bergerak dengan benar di seluruh jaringan dan mencapai tujuannya.
 
-1. Un-tagging
+1. Penghapusan Tanda (Un-tagging)
 
-   Setelah paket data sampai pada tujuannya, tag identifikasi VLAN akan dihapus sehingga paket data dapat diterima dan diproses oleh user atau perangkat yang menerimanya.
+   Ketika paket data mencapai tujuannya, tanda identifikasi VLAN akan dihapus. Ini memungkinkan paket data diterima dan diolah oleh pengguna atau perangkat tanpa hambatan.
 
-## Protokol
+## Standarisasi
 
-Ada dua jenis protokol utama yang digunakan dalam konfigurasi VLAN
+1. IEEE 802.1Q (Dot1Q)
 
-1. Dot1Q
+   IEEE 802.1Q atau lebih dikenal dengan Dot1Q adalah protokol tagging yang paling umum digunakan dalam implementasi VLAN. Ini adalah standar yang diakui secara internasional yang mengatur cara menandai dan memproses paket data yang terkait dengan VLAN di jaringan Ethernet.
 
-   Dot1Q adalah protokol VLAN standar yang diterima oleh IEEE dan banyak digunakan dalam jaringan LAN.
+   - Bagaimana Dot1Q Bekerja
 
-   Dot1Q menambahkan tag 4-byte pada header frame untuk menandai frame dengan ID VLAN tertentu.
+     Ketika paket data diteruskan dari switch ke switch, dan dari switch ke router atau host lainnya, paket data diberi tag VLAN yang menyertakan informasi tentang VLAN asalnya. Tag ini mengidentifikasi VLAN yang terlibat dan memungkinkan perangkat di ujung penerimaan untuk memahami VLAN apa yang relevan dengan paket tersebut.
 
-   Ini memungkinkan frame untuk diteruskan melalui jaringan dan dipisahkan ke VLAN yang berbeda sesuai dengan tag yang diterima.
+   - Batasan Jumlah VLAN pada Dot1Q
 
-   IEEE 802.1Q mendukung hingga 4096 VLAN.
+     IEEE 802.1Q memiliki dukungan yang lebih luas dalam hal jumlah VLAN yang dapat diinisiasi. Protokol ini mendukung hingga 4096 VLAN dalam satu jaringan fisik.
 
-2. ISL (Inter-Switch Link)
+1. Cisco ISL (Inter-Switch Link)
 
-   ISL adalah protokol VLAN yang dikembangkan oleh Cisco Systems.
+   Cisco ISL adalah protokol tagging yang digunakan khusus dalam lingkungan perangkat Cisco. Namun, Cisco ISL sudah tidak lagi umum digunakan karena IEEE 802.1Q (Dot1Q) telah menjadi standar yang lebih umum dan diadopsi secara luas.
 
-   ISL menambahkan header sepanjang 26 byte pada setiap frame untuk menandai frame dengan ID VLAN tertentu.
+   - Bagaimana Cisco ISL Bekerja
 
-   Ini memungkinkan switch untuk mengenali dan memisahkan frame ke VLAN yang berbeda sesuai dengan header ISL yang diterima.
+     Cisco ISL mengenkapsulasi seluruh paket data asli dalam sebuah frame baru yang berisi informasi tentang VLAN yang terlibat. Frame ini mengangkut paket data asli beserta tag VLAN dalam satu kesatuan, dan frame ini kemudian dikirimkan dalam jaringan.
 
-   ISL mendukung hingga 1000 VLAN.
+   - Batasan Jumlah VLAN pada Cisco ISL
+
+     Sebelumnya, Cisco ISL memiliki batas 1005 VLAN dalam satu jaringan fisik.
+
+Perbedaan utama antara keduanya adalah bahwa Dot1Q adalah standar yang diakui secara internasional dan kompatibel dengan berbagai perangkat, sedangkan Cisco ISL khusus digunakan dalam perangkat Cisco dan tidak kompatibel dengan perangkat dari vendor lain.
 
 ## Ilustrasi
 
-Sebuah perangkat Cisco Switch dikonfigurasi VLAN baru dengan keterangan sebagai berikut
+Sebuah perangkat Cisco switch dikonfigurasi Port Based VLAN sebagai berikut
 
-![](/assets/img/2022-03-13-pembagian-jaringan-secara-virtual-menggunakan-virtual-local-area-network-vlan/01.png){: .normal }
+![](/assets/img/2022-03-13-pembagian-jaringan-secara-virtual-menggunakan-virtual-local-area-network-vlan/04.png){: .normal }
 
 | VLAN ID | VLAN Name  | VLAN Member     | Ket    |
 | ------- | ---------- | --------------- | ------ |
@@ -165,16 +203,4 @@ Sebuah perangkat Cisco Switch dikonfigurasi VLAN baru dengan keterangan sebagai 
 | 20      | Jaringan B | Port 7 s.d. 12  | Kuning |
 | 30      | Jaringan C | Port 13 s.d. 18 | Hijau  |
 
-Maka, ada berapakah jumlah VLAN yang tersedia?
-
-VLAN dapat membantu dalam mengatasi masalah colision pada jaringan dengan cara membagi jaringan menjadi beberapa broadcast domain yang terpisah.
-
-![](/assets/img/2022-03-13-pembagian-jaringan-secara-virtual-menggunakan-virtual-local-area-network-vlan/02.png){: .normal }
-
-![](/assets/img/2022-03-13-pembagian-jaringan-secara-virtual-menggunakan-virtual-local-area-network-vlan/03.png){: .normal }
-
-Dalam VLAN, setiap broadcast dikirim hanya ke port-port yang termasuk dalam VLAN yang sama, sehingga mengurangi jumlah broadcast yang diterima oleh setiap perangkat jaringan.
-
-Hal ini membantu mengurangi kemungkinan colision pada jaringan dan meningkatkan kinerja jaringan secara keseluruhan.
-
-![](/assets/img/2022-03-13-pembagian-jaringan-secara-virtual-menggunakan-virtual-local-area-network-vlan/04.png){: .normal }
+sehingga, dari keterangan di atas berapakah jumlah keanggotaan VLAN?
