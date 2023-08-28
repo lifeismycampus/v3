@@ -268,4 +268,34 @@ Apabila konfigurasi VLAN berhasil diimplementasikan, hanya perangkat yang menjad
 
 #### Contoh kasus
 
+Perhatikan topologi jaringan berikut!
+
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/18.png){: .normal }
+
+Tersedia suatu topologi jaringan dengan spesifikasi berikut:
+
+1. Switch
+
+   1. Type: 2950-24
+   1. Hostname: SwUtama
+
+1. Network
+
+   1. Net ID: 172.xx.100.0/24
+   2. xx: nomor presensi masing-masing
+
+1. VLAN
+
+   1. ID: 10, Name: Guru, Member: port 6 s.d. port 10
+   2. ID: 20, Name: Siswa, Member: port 11 s.d. port 15
+   3. ID: 30, Name: TU, Member: port 16 s.d. port 20
+
 #### Instruksi
+
+Lakukan konfigurasi VLAN dengan instruksi:
+
+1.  Susun topologi jaringan di atas
+2.  Rancang tabel pengalamatan seperti contoh
+3.  Konfigurasikan VLAN sesuai spesifikasi
+4.  Lakukan pengamatan dan pengujian pada jaringan terkonfigurasi
+5.  Susun dokumentasi sesuai lembar kerja tersedia
