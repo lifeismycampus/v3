@@ -13,7 +13,7 @@ cdns:
 
 # webfonts: https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap
 
-webfonts: https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;600;700;900&display=swap
+webfonts: https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@400;600;700;900&display=swap
 
 # Libraries
 
