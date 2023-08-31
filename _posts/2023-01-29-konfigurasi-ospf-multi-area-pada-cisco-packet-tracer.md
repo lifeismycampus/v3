@@ -3,7 +3,7 @@ layout: post
 title: Konfigurasi OSPF Multi Area pada Cisco Packet Tracer
 date: 2023-01-29 00:00 +0000
 author: angga
-categories: [Materi, Praktikum]
+categories: [Konfigurasi]
 tags: [cisco, routing, subnetting]
 ---
 

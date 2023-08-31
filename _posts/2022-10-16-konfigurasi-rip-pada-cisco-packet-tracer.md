@@ -3,7 +3,7 @@ layout: post
 title: Konfigurasi (Routing Information Protocol) RIP pada Cisco Packet Tracer
 date: 2022-10-16 00:00 +0000
 author: angga
-categories: [Materi, Praktikum]
+categories: [Konfigurasi]
 tags: [cisco, routing, subnetting]
 ---
 

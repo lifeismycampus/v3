@@ -3,7 +3,7 @@ layout: post
 title: Routing pada Jaringan Komputer
 date: 2022-07-10 00:00 +0000
 author: angga
-categories: [Materi, Teori]
+categories: [Konsep]
 tags: [cisco, routing]
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Enhanced Interior Gateway Routing Protocol (EIGRP) sebagai Protokol Routing pada Jaringan Komputer
 date: 2023-02-05 00:00 +0000
 author: angga
-categories: [Materi, Teori]
+categories: [Konsep]
 tags: [cisco, routing]
 ---
 

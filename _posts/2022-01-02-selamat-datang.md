@@ -3,7 +3,7 @@ layout: post
 title: Selamat Datang
 date: 2022-01-02 00:00 +0000
 author: angga
-categories: [Blog]
+categories: [Lainnya]
 tags: [lainnya]
 ---
 

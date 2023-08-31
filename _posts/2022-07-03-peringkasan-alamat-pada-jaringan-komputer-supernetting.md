@@ -3,7 +3,7 @@ layout: post
 title: Peringkasan Alamat pada Jaringan Komputer (Supernetting)
 date: 2022-07-03 00:00 +0000
 author: angga
-categories: [Materi, Teori]
+categories: [Konsep]
 tags: [cisco, routing, supernetting]
 ---
 

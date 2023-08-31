@@ -1,1 +1,1 @@
-<kbd>lifeismycampus.com</kbd>
+repository of [lifeismycampus.com](https://lifeismycampus.com)

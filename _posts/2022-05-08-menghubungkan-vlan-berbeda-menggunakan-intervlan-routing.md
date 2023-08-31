@@ -3,7 +3,7 @@ layout: post
 title: Menghubungkan VLAN Berbeda dengan InterVLAN Routing
 date: 2022-05-08 00:00 +0000
 author: angga
-categories: [Materi, Praktikum]
+categories: [Konfigurasi]
 tags: [cisco, routing, switching, vlan]
 ---
 

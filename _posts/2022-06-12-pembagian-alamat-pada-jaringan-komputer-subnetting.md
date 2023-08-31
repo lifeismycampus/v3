@@ -3,7 +3,7 @@ layout: post
 title: Pembagian Alamat pada Jaringan Komputer (Subnetting)
 date: 2022-06-12 00:00 +0000
 author: angga
-categories: [Materi, Teori]
+categories: [Konsep]
 tags: [cisco, routing, subnetting]
 ---
 

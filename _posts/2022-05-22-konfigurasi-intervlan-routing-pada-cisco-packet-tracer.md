@@ -3,7 +3,7 @@ layout: post
 title: Konfigurasi InterVLAN Routing pada Cisco Packet Tracer
 date: 2022-05-22 00:00 +0000
 author: angga
-categories: [Materi, Praktikum]
+categories: [Konfigurasi]
 tags: [cisco, routing, switching, vlan]
 ---
 

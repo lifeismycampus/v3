@@ -3,7 +3,7 @@ layout: post
 title: Konfigurasi VTP pada Cisco Packet Tracer
 date: 2022-04-24 00:00 +0000
 author: angga
-categories: [Materi, Praktikum]
+categories: [Konfigurasi]
 tags: [cisco, switching, vlan]
 ---
 

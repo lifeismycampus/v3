@@ -3,7 +3,7 @@ layout: post
 title: Konfigurasi Redistribution Routing pada Cisco Packet Tracer
 date: 2023-03-12 00:00 +0000
 author: angga
-categories: [Materi, Praktikum]
+categories: [Konfigurasi]
 tags: [cisco, routing]
 ---
 

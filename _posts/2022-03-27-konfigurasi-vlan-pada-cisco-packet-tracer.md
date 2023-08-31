@@ -3,7 +3,7 @@ layout: post
 title: Konfigurasi VLAN pada Cisco Packet Tracer
 date: 2022-03-27 00:00 +0000
 author: angga
-categories: [Materi, Praktikum]
+categories: [Konfigurasi]
 tags: [cisco, switching, vlan]
 ---
 

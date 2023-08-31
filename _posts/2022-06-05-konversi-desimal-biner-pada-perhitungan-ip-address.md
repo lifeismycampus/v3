@@ -3,7 +3,7 @@ layout: post
 title: Konversi Desimal Biner pada Perhitungan IP Address
 date: 2022-06-05 00:00 +0000
 author: angga
-categories: [Materi, Teori]
+categories: [Konsep]
 tags: [cisco, routing, subnetting]
 ---
 

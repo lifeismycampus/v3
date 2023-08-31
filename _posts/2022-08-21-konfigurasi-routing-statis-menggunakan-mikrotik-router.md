@@ -3,7 +3,7 @@ layout: post
 title: Konfigurasi Routing Statis Menggunakan MikroTik Router
 date: 2022-08-21 00:00 +0000
 author: angga
-categories: [Materi, Praktikum]
+categories: [Konfigurasi]
 tags: [mikrotik, routing, subnetting]
 ---
 

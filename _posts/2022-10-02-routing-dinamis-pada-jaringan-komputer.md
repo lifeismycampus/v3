@@ -3,7 +3,7 @@ layout: post
 title: Routing Dinamis pada Jaringan Komputer
 date: 2022-10-02 00:00 +0000
 author: angga
-categories: [Materi, Teori]
+categories: [Konsep]
 tags: [cisco, routing]
 ---
 

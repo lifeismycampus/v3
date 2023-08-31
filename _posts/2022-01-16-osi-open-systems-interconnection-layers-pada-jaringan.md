@@ -3,7 +3,7 @@ layout: post
 title: OSI (Open Systems Interconnection) Layers sebagai Standarisasi Jaringan Komputer
 date: 2022-01-16 00:00 +0000
 author: angga
-categories: [Materi, Teori]
+categories: [Teori]
 tags: [osi]
 ---
 
