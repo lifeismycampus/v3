@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 5
 ---
 
-Welcome to our Blog!
+Welcome to Life is My Campus!
 
 Our blog serves as a primary source of documentation and knowledge sharing in the realm of computer networking. Our goal is to provide comprehensive materials and resources related to the subject.
 

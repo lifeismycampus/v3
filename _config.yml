@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
   Life is My Campus is a blog that provides information and tutorials on computer and networking. We cover topics such as router configuration, switch configuration, access point configuration, server configuration, and client configuration.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ""
+url: "https://lifeismycampus.com"
 
 github:
   username: lifeismycampus # change to your github username

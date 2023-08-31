@@ -204,3 +204,35 @@ Sebuah perangkat Cisco switch dikonfigurasi Port Based VLAN sebagai berikut
 | 30      | Jaringan C | Port 13 s.d. 18 | Hijau  |
 
 sehingga, dari keterangan di atas berapakah jumlah keanggotaan VLAN?
+
+## Masalah Umum
+
+Masalah umum yang biasa ditemui ketika mengaplikasikan VLAN pada jaringan komputer
+
+1. Koneksi tidak terbentuk
+
+   Masalah ini dapat terjadi karena salah satu atau kedua port tidak dikonfigurasi sebagai trunk port. Untuk mengatasi masalah ini, periksa mode trunk dan VLAN yang diaktifkan pada kedua port.
+
+2. Lalu lintas tidak dapat mengalir
+
+   Masalah ini dapat terjadi karena VLAN yang benar tidak diaktifkan pada port. Untuk mengatasi masalah ini, periksa apakah VLAN yang benar telah diaktifkan pada port.
+
+3. VLAN tidak dapat diakses
+
+   Masalah ini dapat terjadi karena port tidak dikonfigurasi untuk mengakses VLAN yang diinginkan. Untuk mengatasi masalah ini, periksa apakah port telah dikonfigurasi untuk mengakses VLAN yang diinginkan.
+
+## Troubleshoot
+
+Berikut adalah beberapa langkah umum untuk troubleshooting VLAN trunking
+
+1. Periksa fisik
+
+   Pastikan kabel dan koneksi fisik berfungsi dengan baik.
+
+2. Verifikasi konfigurasi
+
+   Pastikan mode trunk dan VLAN yang diaktifkan pada kedua port sesuai.
+
+3. Gunakan perintah show
+
+   Perintah show dapat digunakan untuk memeriksa status trunking pada switch.
