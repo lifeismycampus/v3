@@ -272,7 +272,7 @@ Apabila konfigurasi VLAN berhasil diimplementasikan, hanya perangkat yang menjad
 
 Perhatikan topologi jaringan berikut!
 
-![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/18.png){: .normal }
+![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/19.png){: .normal }
 
 Tersedia suatu topologi jaringan dengan spesifikasi berikut:
 
