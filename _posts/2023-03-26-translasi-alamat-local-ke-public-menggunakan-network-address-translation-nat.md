@@ -4,7 +4,7 @@ title: Translasi Alamat Local ke Public dengan Network Address Translation (NAT)
 date: 2023-03-26 00:00 +0000
 author: angga
 categories: [Konsep]
-tags: [cisco, routing, nat, internet gateway]
+tags: [nat]
 ---
 
 ## Pengertian dan Konsep

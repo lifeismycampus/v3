@@ -4,7 +4,7 @@ title: Open Shortest-Path First (OSPF) sebagai Protokol Routing pada Jaringan Ko
 date: 2023-01-15 00:00 +0000
 author: angga
 categories: [Konsep]
-tags: [cisco, routing]
+tags: [routing]
 ---
 
 ## Pengertian

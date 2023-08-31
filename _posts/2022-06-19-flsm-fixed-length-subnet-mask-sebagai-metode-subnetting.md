@@ -4,7 +4,7 @@ title: FLSM (Fixed Length Subnet Mask) sebagai Metode Subnetting
 date: 2022-06-19 00:00 +0000
 author: angga
 categories: [Konsep]
-tags: [cisco, routing, subnetting]
+tags: [subnetting]
 ---
 
 ## Pengertian

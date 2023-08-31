@@ -4,7 +4,7 @@ title: Pengelolaan VLAN antar Switch dengan VLAN Trunking Protocol (VTP)
 date: 2022-04-10 00:00 +0000
 author: angga
 categories: [Konsep]
-tags: [cisco, switching, vlan]
+tags: [cisco, vlan]
 ---
 
 ## Pengertian

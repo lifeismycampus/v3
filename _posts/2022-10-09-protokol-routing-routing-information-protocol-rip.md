@@ -4,7 +4,7 @@ title: Routing Information Protocol (RIP) sebagai Protokol Routing pada Jaringan
 date: 2022-10-09 00:00 +0000
 author: angga
 categories: [Konsep]
-tags: [cisco, routing]
+tags: [routing]
 ---
 
 ## Pengertian

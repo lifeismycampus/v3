@@ -4,7 +4,7 @@ title: Routing Statis pada Jaringan Komputer
 date: 2022-08-07 00:00 +0000
 author: angga
 categories: [Konsep]
-tags: [cisco, routing]
+tags: [routing]
 ---
 
 ## Pengertian

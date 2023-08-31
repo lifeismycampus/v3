@@ -4,7 +4,7 @@ title: Pembagian Jaringan secara Virtual Menggunakan Virtual Local Area Network 
 date: 2022-03-13 00:00 +0000
 author: angga
 categories: [Konsep]
-tags: [cisco, switching, vlan]
+tags: [cisco, vlan]
 ---
 
 ## Pengertian
