@@ -14,28 +14,25 @@ We believe in the power of interaction and look forward to hearing from you. Ple
 
 Thank you for considering getting in touch. We are excited to connect with you and further enrich our community of learners and enthusiasts.
 
+## Send Message
+
 <form accept-charset="UTF-8" action="https://getform.io/{YOUR_UNIQUE_FORM_ENDPOINT}" method="POST" enctype="multipart/form-data" target="_blank">
       <div class="form-group">
-        <label for="exampleInputEmail1" required="required">Email address</label>
-        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <label for="exampleInputName">Your Name</label>
+        <input type="text" name="name" class="form-control" id="exampleInputName" required="required">
       </div>
       <div class="form-group">
-        <label for="exampleInputName">Name</label>
-        <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Enter your name" required="required">
+        <label for="exampleInputEmail1" required="required">Your Email</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required="required">
       </div>
       <div class="form-group">
-        <label for="exampleFormControlSelect1">Favourite Platform</label>
-        <select class="form-control" id="exampleFormControlSelect1" name="platform" required="required">
-          <option>Github</option>
-          <option>Gitlab</option>
-          <option>Bitbucket</option>
-        </select>
+        <label for="exampleInputSubject">Subject</label>
+        <input type="text" name="name" class="form-control" id="exampleInputSubject" required="required">
       </div>
-      <hr>
-      <div class="form-group mt-3">
-        <label class="mr-2">Upload your CV:</label>
-        <input type="file" name="file">
+      <div class="form-group">
+        <label for="exampleInputMessage">Your message</label>
+        <textarea rows="5" name="name" class="form-control" id="exampleInputMessage" required="required"></textarea>
       </div>
-      <hr>
+      <br>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
