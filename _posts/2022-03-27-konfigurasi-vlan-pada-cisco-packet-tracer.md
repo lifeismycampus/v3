@@ -113,9 +113,14 @@ Gunakan tombol <kbd>Enter</kbd> untuk mengeksekusi suatu perintah.
 
 ## Langkah Kerja
 
-Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu Persiapan, Konfigurasi, Kesimpulan, dan Berlatih.
+Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu 
 
-### Persiapan
+1. Persiapan
+2. Konfigurasi dan Konfirmasi
+3. Kesimpulan
+4. Berlatih
+
+### 1. Persiapan
 
 #### Topologi jaringan
 
@@ -142,7 +147,7 @@ Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu Persiapan, K
 | Switch | Fa0/11, Fa0/12, ... s.d. Fa0/20 | 200     | -           | -             |
 | Switch | selain port di atas             | 1       | -           | -             |
 
-### Konfigurasi
+### 1. Konfigurasi dan Konfirmasi
 
 #### Langkah ke-1: konfigurasi alamat IP pada PC
 
@@ -262,11 +267,11 @@ Bandingkan hasil ping antara jaringan 1 segmen dan berbeda segmen
 Sw1#copy running-config startup-config
 ```
 
-### Penarikan Kesimpulan
+### 3. Kesimpulan
 
 Apabila konfigurasi VLAN berhasil diimplementasikan, hanya perangkat yang menjadi anggota dari VLAN ID yang sama yang dapat terhubung. Proses penambahan keanggotaan VLAN berdasarkan port pada perangkat Switch dapat dilakukan secara individual atau kelompok (berdasarkan rentang nomor port).
 
-### Berlatih
+### 4. Berlatih
 
 #### Contoh kasus
 
@@ -281,16 +286,18 @@ Tersedia suatu topologi jaringan dengan spesifikasi berikut:
    1. Type: 2950-24
    1. Hostname: SwUtama
 
-1. Network
-
-   1. Net ID: 172.xx.100.0/24
-   2. xx: nomor presensi masing-masing
-
 1. VLAN
 
    1. ID: 10, Name: Guru, Member: port 6 s.d. port 10
    2. ID: 20, Name: Siswa, Member: port 11 s.d. port 15
    3. ID: 30, Name: TU, Member: port 16 s.d. port 20
+
+1. Network
+
+   1. Net ID: 172.xx.100.0/24
+
+> Kode `xx` diganti dengan nomor presensi masing-masing.
+{: .prompt-info }
 
 #### Instruksi
 

@@ -23,22 +23,51 @@ VTP juga memungkinkan administrator jaringan untuk menambah, menghapus, dan memo
 
 ## Perintah CLI
 
-| Perintah                                 | Deskripsi                              |
-| ---------------------------------------- | -------------------------------------- |
-| Switch(config)#vtp domain `domain-name`  | Mengganti nama domain pada VTP         |
-| Switch(config)#vtp password `word`       | Mengganti password pada VTP            |
-| Switch(config)#vtp mode `operation-mode` | Mengganti mode VTP                     |
-| Switch(config-if)#switchport mode trunk  | Mengganti mode interface sebagai trunk |
-| Switch#show vtp status                   | Menampilkan domain dan mode VTP        |
-| Switch#show vtp password                 | Menampilkan password VTP               |
-| Switch#show interface trunk              | Menampilkan interface mana yang trunk  |
-| Switch#show vtp counter                  | Menampilkan pesan/message dari VTP     |
+Perintah yang digunakan pada praktikum kali ini yaitu:
+
+1. Switch(config)#vtp domain 'name'
+
+   Perintah ini digunakan untuk mengatur domain VTP (VLAN Trunking Protocol) pada switch. Domain VTP adalah grup switch yang berbagi informasi tentang VLAN. Anda harus mengganti 'name' dengan nama domain yang ingin Anda atur.
+
+1. Switch(config)#vtp password 'word'
+
+   Perintah ini digunakan untuk mengatur kata sandi VTP pada switch. Kata sandi VTP digunakan untuk memberikan keamanan dalam mengkonfigurasi VLAN. Anda harus mengganti 'word' dengan kata sandi yang aman.
+
+1. Switch(config)#vtp mode 'mode'
+
+   Perintah ini digunakan untuk mengatur mode operasi VTP pada switch. Mode ini dapat berupa "server," "client," atau "transparent." Mode "server" memungkinkan switch untuk mengkonfigurasi VLAN, "client" hanya menerima konfigurasi VLAN dari server, dan "transparent" tidak berpartisipasi dalam penyebaran informasi VTP.
+
+1. Switch(config-if)#switchport mode trunk
+
+   Perintah ini digunakan pada antarmuka (interface) switch untuk mengatur mode antarmuka menjadi mode trunk. Mode trunk digunakan untuk mengizinkan lalu lintas VLAN melewati antarmuka tersebut.
+
+1. Switch#show vtp status
+
+   Perintah ini digunakan untuk menampilkan status VTP pada switch. Ini akan menampilkan informasi tentang domain VTP, mode operasi, revisi, dan lainnya.
+
+1. Switch#show vtp password
+
+   Perintah ini digunakan untuk menampilkan kata sandi VTP yang telah diatur pada switch. Ini membantu Anda memverifikasi kata sandi yang digunakan dalam konfigurasi VTP.
+
+1. Switch#show interface trunk
+
+   Perintah ini digunakan untuk menampilkan informasi tentang antarmuka trunk pada switch. Ini akan menampilkan daftar antarmuka yang diatur sebagai trunk, serta informasi tentang VLAN yang diizinkan melewati antarmuka tersebut.
+
+1. Switch#show vtp counter
+
+   Perintah ini digunakan untuk menampilkan informasi tentang hitungan perubahan yang telah terjadi dalam konfigurasi VTP pada switch. Ini dapat membantu Anda melihat apakah ada perubahan dalam pengaturan VLAN.
 
 ## Langkah Kerja
 
-Pada praktikum kali ini akan terbagi menjadi beberapa langkah yaitu Persiapan, Konfigurasi dan Konfirmasi, Konfigurasi Ulang, Pengujian.
+Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu 
 
-### Persiapan
+1. Persiapan
+2. Konfigurasi dan Konfirmasi
+3. Konfigurasi Ulang
+4. Pengujian
+5. Berlatih
+
+### 1. Persiapan
 
 #### Topologi jaringan
 
@@ -58,9 +87,12 @@ Pada praktikum kali ini akan terbagi menjadi beberapa langkah yaitu Persiapan, K
 
 3. Network
 
-   1. Net ID: 10.100.xx.0/24 (xx diganti no presensi)
+   1. Net ID: 10.100.xx.0/24
    2. Host pada VLAN ID 20: xx.21 s.d. xx.30
    3. Host pada VLAN ID 30: xx.31 s.d. xx.100
+
+> Kode `xx` diganti dengan nomor presensi masing-masing, pada contoh ini akan menggunakan 99.
+{: .prompt-info }
 
 #### Tabel pengalamatan
 
@@ -73,9 +105,20 @@ Pada praktikum kali ini akan terbagi menjadi beberapa langkah yaitu Persiapan, K
 | SwServer | Fa0/24    | 20, 30  |              |               |
 | SwClient | Fa0/24    | 20, 30  |              |               |
 
-### Konfigurasi dan Konfirmasi
+### 2. Konfigurasi dan Konfirmasi
 
-#### SwServer
+#### Langkah ke-1: ...
+#### Langkah ke-2: ...
+#### Langkah ke-3: ...
+#### Langkah ke-4: ...
+#### Langkah ke-5: ...
+#### Langkah ke-6: ...
+#### Langkah ke-7: ...
+#### Langkah ke-8: ...
+#### Langkah ke-9: ...
+#### Langkah ke-10: ...
+
+#### Langkah ke-1: ...
 
 1. Inisiasi VLAN
 
@@ -243,7 +286,7 @@ Pada praktikum kali ini akan terbagi menjadi beberapa langkah yaitu Persiapan, K
 
     Lakukan pengujian yang sama seperti langkah sebelumnya, amati hasilnya
 
-### Konfigurasi Ulang
+### 3. Konfigurasi Ulang
 
 #### Topologi Jaringan dan Spesifikasi
 
@@ -416,7 +459,7 @@ Pada praktikum kali ini akan terbagi menjadi beberapa langkah yaitu Persiapan, K
    SwClient3(config)#
    ```
 
-### Pengujian
+### 4. Pengujian
 
 1. Koneksikan PC lainnya dengan Switch dan input IP Address pada PC baru
 
@@ -431,7 +474,7 @@ Pada praktikum kali ini akan terbagi menjadi beberapa langkah yaitu Persiapan, K
 
 3. Amati hasil konfigurasi (SwTrans, SwClient3) lalu tarik kesimpulan
 
-## Berlatih
+### 5. Berlatih
 
 1. Unduh topologi jaringan VTP dengan mode client-server [di sini](/assets/pkt/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/konfigurasi-vtp-client-server.pkt)
 2. Lakukan konfigurasi VLAN sesuai kebutuhan/spesifikasi yang sudah tercantum
