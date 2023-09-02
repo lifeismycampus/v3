@@ -59,7 +59,7 @@ Perintah yang digunakan pada praktikum kali ini yaitu:
 
 ## Langkah Kerja
 
-Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu 
+Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu
 
 1. Persiapan
 2. Konfigurasi dan Konfirmasi
@@ -91,8 +91,7 @@ Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu
    2. Host pada VLAN ID 20: xx.21 s.d. xx.30
    3. Host pada VLAN ID 30: xx.31 s.d. xx.100
 
-> Kode `xx` diganti dengan nomor presensi masing-masing, pada contoh ini akan menggunakan 99.
-{: .prompt-info }
+> Kode `xx` diganti dengan nomor presensi masing-masing, pada contoh ini akan menggunakan `99`.
 
 #### Tabel pengalamatan
 
@@ -107,372 +106,336 @@ Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu
 
 ### 2. Konfigurasi dan Konfirmasi
 
-#### Langkah ke-1: ...
-#### Langkah ke-2: ...
-#### Langkah ke-3: ...
-#### Langkah ke-4: ...
-#### Langkah ke-5: ...
-#### Langkah ke-6: ...
-#### Langkah ke-7: ...
-#### Langkah ke-8: ...
-#### Langkah ke-9: ...
-#### Langkah ke-10: ...
+#### Langkah ke-1: [SwServer] aktivasi VLAN baru
 
-#### Langkah ke-1: ...
+```console
+Switch>enable
+Switch#configure terminal
+Switch(config)#hostname SwServer
+SwServer(config)#vlan 20
+SwServer(config-vlan)#name Guru
+SwServer(config-vlan)#exit
+SwServer(config)#vlan 30
+SwServer(config-vlan)#name Siswa
+SwServer(config-vlan)#exit
+SwServer(config)#
+```
 
-1. Inisiasi VLAN
+#### Langkah ke-2: [SwServer] atur port sebagai anggota VLAN
 
-   ```console
-   Switch>enable
-   Switch#configure terminal
-   Switch(config)#hostname SwServer
-   SwServer(config)#vlan 20
-   SwServer(config-vlan)#name Guru
-   SwServer(config-vlan)#exit
-   SwServer(config)#vlan 30
-   SwServer(config-vlan)#name Siswa
-   SwServer(config-vlan)#exit
-   SwServer(config)#
-   ```
+```console
+SwServer(config)#interface range fastEthernet 0/6-10
+SwServer(config-if-range)#switchport mode access
+SwServer(config-if-range)#switchport access vlan 20
+SwServer(config-if-range)#exit
+SwServer(config)#interface range fastEthernet 0/11-20
+SwServer(config-if-range)#switchport mode access
+SwServer(config-if-range)#switchport access vlan 30
+SwServer(config-if-range)#exit
+SwServer(config)#
+```
 
-1. Keanggotaan VLAN
+#### Langkah ke-3: [SwServer] aktivasi VTP
 
-   ```console
-   SwServer(config)#interface range fastEthernet 0/6-10
-   SwServer(config-if-range)#switchport mode access
-   SwServer(config-if-range)#switchport access vlan 20
-   SwServer(config-if-range)#exit
-   SwServer(config)#interface range fastEthernet 0/11-20
-   SwServer(config-if-range)#switchport mode access
-   SwServer(config-if-range)#switchport access vlan 30
-   SwServer(config-if-range)#exit
-   SwServer(config)#
-   ```
+```console
+SwServer(config)#vtp domain stemsagonet
+SwServer(config)#vtp password rahasia
+SwServer(config)#vtp mode server
+SwServer(config)#
+```
 
-1. Aktivasi VTP
+#### Langkah ke-4: [SwServer] aktivasi trunk link penghubung antar Switch
 
-   ```console
-   SwServer(config)#vtp domain stemsagonet
-   SwServer(config)#vtp password rahasia
-   SwServer(config)#vtp mode server
-   SwServer(config)#
-   ```
+```console
+SwServer(config)#interface fastEthernet 0/24
+SwServer(config-if)#switchport mode trunk
+SwServer(config-if)#exit
+SwServer(config)#
+```
 
-1. Aktivasi Trunk Link
+#### Langkah ke-5: [SwServer] konfirmasi VLAN aktif
 
-   ```console
-   SwServer(config)#interface fastEthernet 0/24
-   SwServer(config-if)#switchport mode trunk
-   SwServer(config-if)#exit
-   SwServer(config)#
-   ```
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/02.png){: .normal }
 
-1. Konfirmasi konfigurasi VLAN
+#### Langkah ke-6: [SwServer] konfirmasi VTP aktif
 
-   > show vlan brief
+Informasi jumlah VLAN aktif, VTP domain, dan VTP mode.
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/02.png){: .normal }
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/03.png){: .normal }
 
-1. Konfirmasi konfigurasi VTP Domain dan VTP Mode
+Informasi VTP password.
 
-   > show vtp status
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/04.png){: .normal }
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/03.png){: .normal }
+#### Langkah ke-7: [SwServer] konfirmasi trunk link
 
-1. Konfirmasi konfigurasi VTP Password
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/05.png){: .normal }
 
-   > show vtp password
+#### Langkah ke-8: [SwClient] aktivasi VLAN baru
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/04.png){: .normal }
+```console
+Switch>enable
+Switch#configure terminal
+Switch(config)#hostname SwClient
+SwClient(config)#interface fastEthernet 0/24
+SwClient(config-if)#switchport mode trunk
+SwClient(config-if)#exit
+SwClient(config)#
+```
 
-1. Konfirmasi konfigurasi Trunk Link
+#### Langkah ke-9: [SwClient] aktivasi VTP
 
-   > show interface trunk
+```console
+SwClient(config)#vtp domain stemsagonet
+SwClient(config)#vtp password rahasia
+SwClient(config)#vtp mode client
+SwClient(config)#
+```
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/05.png){: .normal }
+#### Langkah ke-10: [SwClient] konfirmasi trunk link
 
-#### SwClient
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/06.png){: .normal }
 
-1. Aktivasi Trunk Link
+#### Langkah ke-11: [SwClient] konfirmasi VTP aktif
 
-   ```console
-   Switch>enable
-   Switch#configure terminal
-   Switch(config)#hostname SwClient
-   SwClient(config)#interface fastEthernet 0/24
-   SwClient(config-if)#switchport mode trunk
-   SwClient(config-if)#exit
-   SwClient(config)#
-   ```
+Konfirmasi VTP password.
 
-1. Aktivasi VTP
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/07.png){: .normal }
 
-   ```console
-   SwClient(config)#vtp domain stemsagonet
-   SwClient(config)#vtp password rahasia
-   SwClient(config)#vtp mode client
-   SwClient(config)#
-   ```
+Konfirmasi jumlah VLAN aktif, VTP domain, dan VTP mode.
 
-1. Konfirmasi konfigurasi Trunk Link
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/08.png){: .normal }
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/06.png){: .normal }
+Konfirmasi sinkronisasi VLAN aktif yang diterima dari vtp server.
 
-1. Konfirmasi konfigurasi VTP Password
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/09.png){: .normal }
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/07.png){: .normal }
+#### Langkah ke-12: [SwClient] atur port sebagai anggota VLAN
 
-1. Konfirmasi konfigurasi VTP Domain dan VTP Mode
+```console
+SwClient(config)#interface range fastEthernet 0/6-10
+SwClient(config-if-range)#switchport mode access
+SwClient(config-if-range)#switchport access vlan 20
+SwClient(config-if-range)#exit
+SwClient(config)#interface range fastEthernet 0/11-20
+SwClient(config-if-range)#switchport mode access
+SwClient(config-if-range)#switchport access vlan 30
+SwClient(config-if-range)#exit
+SwClient(config)#
+```
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/08.png){: .normal }
+#### Langkah ke-13: [PC] atur alamat IP
 
-1. Konfirmasi konfigurasi VLAN
+PC0-a, PC0-b
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/09.png){: .normal }
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/10.png){: .normal }
 
-1. Keanggotaan VLAN
+PC1-a, PC1-b
 
-   ```console
-   SwClient(config)#interface range fastEthernet 0/6-10
-   SwClient(config-if-range)#switchport mode access
-   SwClient(config-if-range)#switchport access vlan 20
-   SwClient(config-if-range)#exit
-   SwClient(config)#interface range fastEthernet 0/11-20
-   SwClient(config-if-range)#switchport mode access
-   SwClient(config-if-range)#switchport access vlan 30
-   SwClient(config-if-range)#exit
-   SwClient(config)#
-   ```
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/11.png){: .normal }
 
-#### PC0-a, PC0-b
+#### Langkah ke-14: hubungkan dengan Switch
 
-1. Konfigurasi input alamat IP
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/12.png){: .normal }
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/10.png){: .normal }
+#### Langkah ke-15: [PC] konfirmasi alamat IP
 
-#### PC1-a, PC1-b
+Informasi alamat IP.
 
-1. Konfigurasi input alamat IP
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/13.png){: .normal }
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/11.png){: .normal }
+Uji jaringan VLAN ID yang berbeda pada Switch yang sama.
 
-1. Koneksikan PC dengan Switch
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/14.png){: .normal }
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/12.png){: .normal }
+Uji jaringan VLAN ID yang sama pada Switch yang berbeda.
 
-#### PC0-a, PC0-b
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/15.png){: .normal }
 
-1. Konfirmasi konfigurasi IP Address
+Uji jaringan VLAN ID yang berbeda pada Switch yang berbeda.
 
-   > ipconfig
-
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/13.png){: .normal }
-
-1. Pengujian jaringan VLAN ID yang berbeda pada Switch yang sama
-
-   > ping
-
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/14.png){: .normal }
-
-1. Pengujian jaringan VLAN ID yang sama pada Switch yang berbeda
-
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/15.png){: .normal }
-
-1. Pengujian jaringan VLAN ID yang berbeda pada Switch yang berbeda
-
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/16.png){: .normal }
-
-#### PC1-a, PC1-b
-
-    Lakukan pengujian yang sama seperti langkah sebelumnya, amati hasilnya
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/16.png){: .normal }
 
 ### 3. Konfigurasi Ulang
 
 #### Topologi Jaringan dan Spesifikasi
 
-1. Kembangkan jaringan menjadi seperti berikut
+Kembangkan jaringan menjadi seperti berikut
 
-   ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/17.png){: .normal }
+![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/17.png){: .normal }
 
-   dengan tambahan spesifikasi sebagai berikut
+#### Spesifikasi
 
-   1. VTP
+Dengan topologi jaringan yang baru, maka spesifikasi menjadi sebagai berikut
 
-      1. Domain: stemsagonet
-      1. Password: rahasia
+1. VTP
 
-   2. VLAN
+   1. Domain: stemsagonet
+   2. Password: rahasia
 
-      1. **VLAN ID: 10, Name: Umum, Interface: Port 1-5**
-      2. VLAN ID: 20, Name: Guru, Interface: Port 6-10
-      3. VLAN ID: 30, Name: Siswa, Interface: Port 11-20
-      4. **VLAN ID: 40, Name: Admin, Interface: Port 21**
+2. VLAN
 
-   3. Network
+   1. **VLAN ID: 10, Name: Umum, Interface: Port 1-5**
+   2. VLAN ID: 20, Name: Guru, Interface: Port 6-10
+   3. VLAN ID: 30, Name: Siswa, Interface: Port 11-20
+   4. **VLAN ID: 40, Name: Admin, Interface: Port 21**
 
-      1. Net ID: 10.100.xx.0/24 (xx diganti no presensi)
-      2. **Host pada VLAN ID 10: xx.101 s.d. xx.200**
-      3. Host pada VLAN ID 20: xx.21 s.d. xx.30
-      4. Host pada VLAN ID 30: xx.31 s.d. xx.100
-      5. **Host pada VLAN ID 40: xx.201 s.d. xx.254**
+3. Network
 
-#### SwServer
+   1. Net ID: 10.100.xx.0/24
+   2. **Host pada VLAN ID 10: xx.101 s.d. xx.200**
+   3. Host pada VLAN ID 20: xx.21 s.d. xx.30
+   4. Host pada VLAN ID 30: xx.31 s.d. xx.100
+   5. **Host pada VLAN ID 40: xx.201 s.d. xx.254**
 
-1. Inisiasi VLAN Lainnya
+#### Langkah ke-1: [SwServer] aktivasi VLAN lainnya
 
-   ```console
-   SwServer(config)#vlan 10
-   SwServer(config-vlan)#name Umum
-   SwServer(config-vlan)#exit
-   SwServer(config)#vlan 40
-   SwServer(config-vlan)#name Admin
-   SwServer(config-vlan)#exit
-   SwServer(config)#
-   ```
+```console
+SwServer(config)#vlan 10
+SwServer(config-vlan)#name Umum
+SwServer(config-vlan)#exit
+SwServer(config)#vlan 40
+SwServer(config-vlan)#name Admin
+SwServer(config-vlan)#exit
+SwServer(config)#
+```
 
-1. Keanggotaan VLAN Lainnya
+#### Langkah ke-2: [SwServer] atur port sebagai anggota VLAN lainnya
 
-   ```console
-   SwServer(config)#interface range fastEthernet 0/1-5
-   SwServer(config-if-range)#switchport mode access
-   SwServer(config-if-range)#switchport access vlan 10
-   SwServer(config-if-range)#exit
-   SwServer(config)#interface fastEthernet 0/21
-   SwServer(config-if)#switchport mode access
-   SwServer(config-if)#switchport access vlan 40
-   SwServer(config-if)#exit
-   SwServer(config)#
-   ```
+```console
+SwServer(config)#interface range fastEthernet 0/1-5
+SwServer(config-if-range)#switchport mode access
+SwServer(config-if-range)#switchport access vlan 10
+SwServer(config-if-range)#exit
+SwServer(config)#interface fastEthernet 0/21
+SwServer(config-if)#switchport mode access
+SwServer(config-if)#switchport access vlan 40
+SwServer(config-if)#exit
+SwServer(config)#
+```
 
-1. Aktivasi Trunk Link Lainnya
+#### Langkah ke-3: [SwClient] aktivasi trunk link
 
-   ```console
-   SwServer(config)#interface range fastEthernet 0/22-23
-   SwServer(config-if-range)#switchport mode trunk
-   SwServer(config-if-range)#exit
-   SwServer(config)#
-   ```
+```console
+SwServer(config)#interface range fastEthernet 0/22-23
+SwServer(config-if-range)#switchport mode trunk
+SwServer(config-if-range)#exit
+SwServer(config)#
+```
 
-#### SwClient
+#### Langkah ke-4: [SwClient] atur port sebagai anggota VLAN hasil sinkronisasi
 
-1. Keanggotaan VLAN Lainnya
+```console
+SwClient(config)#interface range fastEthernet 0/1-5
+SwClient(config-if-range)#switchport mode access
+SwClient(config-if-range)#switchport access vlan 10
+SwClient(config-if-range)#exit
+SwClient(config)#interface fastEthernet 0/21
+SwClient(config-if)#switchport mode access
+SwClient(config-if)#switchport access vlan 40
+SwClient(config-if)#exit
+SwClient(config)#
+```
 
-   ```console
-   SwClient(config)#interface range fastEthernet 0/1-5
-   SwClient(config-if-range)#switchport mode access
-   SwClient(config-if-range)#switchport access vlan 10
-   SwClient(config-if-range)#exit
-   SwClient(config)#interface fastEthernet 0/21
-   SwClient(config-if)#switchport mode access
-   SwClient(config-if)#switchport access vlan 40
-   SwClient(config-if)#exit
-   SwClient(config)#
-   ```
+#### Langkah ke-5: [SwClient2] aktivasi trunk link
 
-#### SwClient2
+```console
+Switch#configure terminal
+Switch(config)#hostname SwClient2
+SwClient2(config)#interface fastEthernet 0/24
+SwClient2(config-if)#switchport mode trunk
+SwClient2(config-if)#exit
+SwClient2(config)#
+```
 
-1. Aktivasi Trunk Link
+#### Langkah ke-6: [SwClient2] aktivasi VTP
 
-   ```console
-   Switch#configure terminal
-   Switch(config)#hostname SwClient2
-   SwClient2(config)#interface fastEthernet 0/24
-   SwClient2(config-if)#switchport mode trunk
-   SwClient2(config-if)#exit
-   SwClient2(config)#
-   ```
+```console
+SwClient2(config)#vtp domain stemsagonet
+SwClient2(config)#vtp password rahasia
+SwClient2(config)#vtp mode client
+SwClient2(config)#
+```
 
-1. Aktivasi VTP
+#### Langkah ke-7: [SwClient2] atur port sebagai anggota VLAN hasil sinkronisasi
 
-   ```console
-   SwClient2(config)#vtp domain stemsagonet
-   SwClient2(config)#vtp password rahasia
-   SwClient2(config)#vtp mode client
-   SwClient2(config)#
-   ```
+```console
+SwClient2(config)#interface range fastEthernet 0/1-5
+SwClient2(config-if-range)#switchport mode access
+SwClient2(config-if-range)#switchport access vlan 10
+SwClient2(config-if-range)#exit
+SwClient2(config)#interface range fastEthernet 0/6-10
+SwClient2(config-if-range)#switchport mode access
+SwClient2(config-if-range)#switchport access vlan 20
+SwClient2(config-if-range)#exit
+SwClient2(config)#interface range fastEthernet 0/11-20
+SwClient2(config-if-range)#switchport mode access
+SwClient2(config-if-range)#switchport access vlan 30
+SwClient2(config-if-range)#exit
+SwClient2(config)#interface fastEthernet 0/21
+SwClient2(config-if)#switchport mode access
+SwClient2(config-if)#switchport access vlan 40
+SwClient2(config-if)#exit
+SwClient2(config)#
+```
 
-1. Keanggotaan VLAN
+#### Langkah ke-8: [SwTrans] aktivasi trunk link
 
-   ```console
-   SwClient2(config)#interface range fastEthernet 0/1-5
-   SwClient2(config-if-range)#switchport mode access
-   SwClient2(config-if-range)#switchport access vlan 10
-   SwClient2(config-if-range)#exit
-   SwClient2(config)#interface range fastEthernet 0/6-10
-   SwClient2(config-if-range)#switchport mode access
-   SwClient2(config-if-range)#switchport access vlan 20
-   SwClient2(config-if-range)#exit
-   SwClient2(config)#interface range fastEthernet 0/11-20
-   SwClient2(config-if-range)#switchport mode access
-   SwClient2(config-if-range)#switchport access vlan 30
-   SwClient2(config-if-range)#exit
-   SwClient2(config)#interface fastEthernet 0/21
-   SwClient2(config-if)#switchport mode access
-   SwClient2(config-if)#switchport access vlan 40
-   SwClient2(config-if)#exit
-   SwClient2(config)#
-   ```
+```console
+Switch>enable
+Switch#configure terminal
+Switch(config)#hostname SwTrans
+SwTrans(config)#interface range fastEthernet 0/23-24
+SwTrans(config-if-range)#switchport mode trunk
+SwTrans(config-if-range)#exit
+SwTrans(config)#
+```
 
-#### SwTrans
+#### Langkah ke-9: [SwTrans] aktivasi VTP
 
-1. Aktivasi Trunk Link
+```console
+SwTrans(config)#vtp domain stemsagonet
+SwTrans(config)#vtp password rahasia
+SwTrans(config)#vtp mode transparent
+SwTrans(config)#
+```
 
-   ```console
-   Switch>enable
-   Switch#configure terminal
-   Switch(config)#hostname SwTrans
-   SwTrans(config)#interface range fastEthernet 0/23-24
-   SwTrans(config-if-range)#switchport mode trunk
-   SwTrans(config-if-range)#exit
-   SwTrans(config)#
-   ```
+#### Langkah ke-10: [SwClient3] aktivasi trunk link
 
-1. Aktivasi VTP
+```console
+Switch>enable
+Switch#configure terminal
+Switch(config)#hostname SwClient3
+SwClient3(config)#interface fastEthernet 0/24
+SwClient3(config-if)#switchport mode trunk
+SwClient3(config-if)#exit
+SwClient3(config)#
+```
 
-   ```console
-   SwTrans(config)#vtp domain stemsagonet
-   SwTrans(config)#vtp password rahasia
-   SwTrans(config)#vtp mode transparent
-   SwTrans(config)#
-   ```
+#### Langkah ke-11: [SwClient3] aktivasi VTP
 
-#### SwClient3
-
-1. Aktivasi Trunk Link
-
-   ```console
-   Switch>enable
-   Switch#configure terminal
-   Switch(config)#hostname SwClient3
-   SwClient3(config)#interface fastEthernet 0/24
-   SwClient3(config-if)#switchport mode trunk
-   SwClient3(config-if)#exit
-   SwClient3(config)#
-   ```
-
-1. Aktivasi VTP
-
-   ```console
-   SwClient3(config)#vtp domain stemsagonet
-   SwClient3(config)#vtp password rahasia
-   SwClient3(config)#vtp mode client
-   SwClient3(config)#
-   ```
+```console
+SwClient3(config)#vtp domain stemsagonet
+SwClient3(config)#vtp password rahasia
+SwClient3(config)#vtp mode client
+SwClient3(config)#
+```
 
 ### 4. Pengujian
 
-1. Koneksikan PC lainnya dengan Switch dan input IP Address pada PC baru
+1. Koneksikan PC lainnya dengan Switch
 
    ![](/assets/img/2022-04-24-konfigurasi-vtp-pada-cisco-packet-tracer/18.png){: .normal }
 
-2. Konfirmasi konfigurasi VTP dan lakukan pengujian pada topologi terkini
+2. Input alamat IP Address pada PC baru
+3. Konfirmasi konfigurasi VTP dan lakukan pengujian pada topologi terkini
 
    1. Jaringan VLAN ID yang berbeda pada Switch yang sama
    2. Jaringan VLAN ID yang sama pada Switch yang berbeda
    3. Jaringan VLAN ID yang sama pada Switch yang sama
    4. Jaringan VLAN ID yang berbeda pada Switch yang berbeda
 
-3. Amati hasil konfigurasi (SwTrans, SwClient3) lalu tarik kesimpulan
+4. Amati hasil konfigurasi (SwTrans, SwClient3) lalu tarik kesimpulan
 
 ### 5. Berlatih
 

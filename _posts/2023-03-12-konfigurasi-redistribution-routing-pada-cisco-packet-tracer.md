@@ -613,4 +613,4 @@ Topologi jaringan dapat diunduh [di sini](/assets/pkt/2023-03-12-konfigurasi-red
 
 Pengujian jaringan terkonfigurasi dapat dilakukan sebagai berikut
 
-![](/assets/img/2023-03-12-konfigurasi-redistribution-routing-pada-cisco-packet-tracer/46.gif){: .normal }
+{% include embed/youtube.html id='YT9RVdppaFY' %}

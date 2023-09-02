@@ -113,7 +113,7 @@ Gunakan tombol <kbd>Enter</kbd> untuk mengeksekusi suatu perintah.
 
 ## Langkah Kerja
 
-Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu 
+Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu
 
 1. Persiapan
 2. Konfigurasi dan Konfirmasi
@@ -149,7 +149,7 @@ Pada praktikum kali ini akan terbagi menjadi beberapa tahapan yaitu
 
 ### 1. Konfigurasi dan Konfirmasi
 
-#### Langkah ke-1: konfigurasi alamat IP pada PC
+#### Langkah ke-1: [PC] atur alamat IP
 
 Klik pada PC, buka tab Desktop, pilih menu IP Configuration
 
@@ -159,7 +159,7 @@ Klik pada PC, buka tab Desktop, pilih menu IP Configuration
 
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/04.png){: .normal }
 
-#### Langkah ke-2: konfirmasi keanggotaan default VLAN pada Switch
+#### Langkah ke-2: [Switch] konfirmasi keanggotaan default VLAN
 
 Klik pada Switch, buka tab CLI
 
@@ -170,7 +170,7 @@ Switch#show vlan brief
 
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/05.png){: .normal }
 
-#### Langkah ke-3: konfirmasi PC terhubung dalam 1 segmen jaringan
+#### Langkah ke-3: [PC] konfirmasi PC terhubung dalam 1 segmen jaringan
 
 Klik pada PC, buka tab Desktop, pilih menu Command Prompt
 
@@ -184,7 +184,7 @@ ping 'target'
 
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/08.png){: .normal }
 
-#### Langkah ke-4: mengaktifkan VLAN baru
+#### Langkah ke-4: [Switch] mengaktifkan VLAN baru
 
 Buka kembali tab CLI pada Switch
 
@@ -197,17 +197,17 @@ Sw1(config-vlan)#exit
 Sw1(config)#
 ```
 
-#### Langkah ke-5: mengkonfirmasi aktivasi VLAN baru
+#### Langkah ke-5: [Switch] mengkonfirmasi VLAN baru sudah aktif
 
 ```console
 Sw1(config)#do show vlan brief
 ```
 
-`show` dapat pula dieksekusi pada Configuration Mode dengan menambahkan `do` pada awal perintah
+> `show` dapat pula dieksekusi pada Configuration Mode dengan menambahkan `do` pada awal perintah
 
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/09.png){: .normal }
 
-#### Langkah ke-6: mendaftarkan suatu port sebagai anggota VLAN baru
+#### Langkah ke-6: [Switch] mendaftarkan suatu port sebagai anggota VLAN baru
 
 Port Fa0/2 sebagai anggota VLAN 200
 
@@ -221,7 +221,7 @@ Sw1(config)#
 
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/10.png){: .normal }
 
-#### Langkah ke-7: konfirmasi jaringan PC setelah VLAN
+#### Langkah ke-7: [Switch] konfirmasi jaringan PC setelah VLAN
 
 Bandingkan hasil ping antara jaringan 1 segmen dan berbeda segmen
 
@@ -231,7 +231,7 @@ Bandingkan hasil ping antara jaringan 1 segmen dan berbeda segmen
 
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/13.png){: .normal }
 
-#### Langkah ke-8: mendaftarkan beberapa port sekaligus sebagai anggota VLAN baru
+#### Langkah ke-8: [Switch] mendaftarkan beberapa port sekaligus sebagai anggota VLAN baru
 
 Port Fa0/11, Fa0/12, ... s.d. Fa0/20 sebagai anggota VLAN 200
 
@@ -245,7 +245,7 @@ Sw1(config)#
 
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/14.png){: .normal }
 
-#### Langkah ke-9: mengembangan jaringan VLAN
+#### Langkah ke-9: [Switch] mengembangankan jaringan VLAN
 
 Menambahkan PC sebagai anggota VLAN
 
@@ -253,7 +253,7 @@ Menambahkan PC sebagai anggota VLAN
 
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/16.png){: .normal }
 
-#### Langkah ke-10: konfirmasi ulang PC terhubung dalam segmen sama maupun berbeda
+#### Langkah ke-10: [PC] konfirmasi ulang PC terhubung dalam segmen sama maupun berbeda
 
 Bandingkan hasil ping antara jaringan 1 segmen dan berbeda segmen
 
@@ -261,7 +261,7 @@ Bandingkan hasil ping antara jaringan 1 segmen dan berbeda segmen
 
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/18.png){: .normal }
 
-#### Langkah ke-11: menyimpan konfigurasi terkini
+#### Langkah ke-11: [Switch] menyimpan konfigurasi terkini
 
 ```console
 Sw1#copy running-config startup-config
@@ -273,13 +273,15 @@ Apabila konfigurasi VLAN berhasil diimplementasikan, hanya perangkat yang menjad
 
 ### 4. Berlatih
 
-#### Contoh kasus
+#### Topologi Jaringan
 
 Perhatikan topologi jaringan berikut!
 
 ![](/assets/img/2022-03-27-konfigurasi-vlan-pada-cisco-packet-tracer/19.png){: .normal }
 
-Tersedia suatu topologi jaringan dengan spesifikasi berikut:
+#### Spesifikasi
+
+Tersedia suatu topologi jaringan di atas dengan spesifikasi berikut:
 
 1. Switch
 
@@ -297,7 +299,6 @@ Tersedia suatu topologi jaringan dengan spesifikasi berikut:
    1. Net ID: 172.xx.100.0/24
 
 > Kode `xx` diganti dengan nomor presensi masing-masing.
-{: .prompt-info }
 
 #### Instruksi
 
